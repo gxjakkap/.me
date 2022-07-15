@@ -3,6 +3,7 @@ import Footer from "../../components/Footer"
 import { getAllBlogInfo } from "../../lib/md"
 import { join } from 'path'
 import Head from "next/head"
+import Link from "next/link"
 
 const POST_PATH = join(process.cwd(), '_blog')
 
@@ -25,7 +26,7 @@ const BlogGridElement = ({dataArray}) => {
                         <h2 className="card-title">{data.title}</h2>
                         <p>{data.metaDesc}</p>
                         <div className="card-actions justify-end"> 
-                            <a href={`/blog/${data.slug}`} className={"btn btn-primary"}>Read</a>
+                            <Link href={`/blog/${data.slug}`}><button className={"btn btn-primary"}>Read</button></Link>
                         </div>
                     </div>
               </div>

@@ -3,6 +3,7 @@ import Footer from "../components/Footer"
 import GitHubIconForButton from "../components/svgs/githubforbutton"
 import Name from "../components/nameTypeWriter"
 import Head from "next/head"
+import Link from "next/link"
 
 function GetAge(){
   const birthDay = new Date('September 25, 2005, 00:00:00')
@@ -55,7 +56,7 @@ export default function Home() {
             <div className="flex justify-center mt-8 space-x-6 sm:mt-12">
               <button className="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg"><a href="/projects">My Projects</a></button>
               <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800 sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
-              <button className="btn btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg"><a href="/blog">My Blog</a></button>
+              <button className="btn btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog"><a>My Blog</a></Link></button>
             </div>
           </div>
         </section>
@@ -89,9 +90,9 @@ export default function Home() {
                 <p className="leading-relaxed">
                   Now I'm learning and paving my way throught web development. Both
                   frontend and backend. Now I'm somewhat familiar with
-                  <a href="https://tailwindcss.com/" target="_blank"> Tailwindcss </a>
+                  <Link href="https://tailwindcss.com/" target="_blank"> Tailwindcss </Link>
                   and currently learning
-                  <a href="https://vuejs.org/" target="_blank"> Vue.js</a>. I also
+                  <Link href="https://vuejs.org/" target="_blank"> Vue.js</Link>. I also
                   love making Discord bot and some other random stuff.
                 </p>
               </div>

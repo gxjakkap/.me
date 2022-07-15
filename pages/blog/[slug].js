@@ -37,7 +37,7 @@ export default function BlogPage({frontMatter, content}){
     return (
         <main>
             <Head>
-                <title>{frontMatter.metaTitle} - GuntxJakka</title>
+                <title>{`${frontMatter.metaTitle} - GuntxJakka`}</title>
                 <meta charset="UTF-8"/>
                 <meta name="description" content={frontMatter.metaDesc} />
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>

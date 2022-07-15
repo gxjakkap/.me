@@ -24,7 +24,6 @@ export const getStaticPaths = async() => {
 export const getStaticProps = async({params}) => {
     const mdContent = getParsedFileContentBySlug(params.slug, POST_PATH)
     const html = await renderMd(mdContent.content)
-    console.log(mdContent.frontMatter)
     return {
         props: {
             frontMatter: mdContent.frontMatter,
@@ -70,7 +69,7 @@ export default function BlogPage({frontMatter, content}){
     return (
         <main>
             <Head>
-                <title>{frontMatter.metaTitle} - GuntxJakka</title>
+                <title>{`${frontMatter.metaTitle} - GuntxJakka`}</title>
                 <meta charset="UTF-8"/>
                 <meta name="description" content={frontMatter.metaDesc} />
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>

@@ -3,6 +3,7 @@ import Footer from "../../components/Footer"
 import { getAllBlogInfo } from "../../lib/md"
 import { join } from 'path'
 import Head from "next/head"
+import Link from "next/link"
 
 const POST_PATH = join(process.cwd(), '_projects')
 
@@ -25,7 +26,7 @@ const ProjectGridElement = ({dataArray}) => {
                         <h2 className="card-title">{data.title}</h2>
                         <p>{data.metaDesc}</p>
                         <div className="card-actions justify-end"> 
-                            <a href={`/blog/${data.slug}`} className={"btn btn-primary"}>Check it out</a>
+                            <Link href={`/projects/${data.slug}`}><button className={"btn btn-primary"}>Check it out</button></Link>
                         </div>
                     </div>
               </div>
@@ -41,19 +42,19 @@ export default function ProjectHome({dataArray}){
             <Head>
                 <title>Projects - GuntxJakka</title>
                 <meta charset="UTF-8"/>
-                <meta name="description" content="GuntxJakka's blog. Where he mostly document his life." />
+                <meta name="description" content="GuntxJakka's project list. I spend a lot of time on these things so please check them out." />
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <meta name="keywords" content="guntxjakka, jakkaphat chalermphanaphan, jakkaphat, chalermphanaphan, gunt, gxjakkap, blog"/>
+                <meta name="keywords" content="guntxjakka, jakkaphat chalermphanaphan, jakkaphat, chalermphanaphan, gunt, gxjakkap, project, projects, programming"/>
                 <meta name="author" content="Jakkaphat Chalermphanaphan"/>
-                <meta property="og:title" content="Blog - GuntxJakka" />
-                <meta property="og:description" content="GuntxJakka's blog. Where he mostly document his life." />
+                <meta property="og:title" content="Projects - GuntxJakka" />
+                <meta property="og:description" content="GuntxJakka's project list. I spend a lot of time on these things so please check them out." />
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content="https://res.cloudinary.com/dynrld3nm/image/upload/v1657876472/guntxjakka.me/website_thumb.webp" />
                 <meta property="og:site_name" content="GuntxJakka" />
-                <meta property="og:description" content="A lost student interested in coding, photographing and video editing." />
+                <meta property="og:description" content="GuntxJakka's project list. I spend a lot of time on these things so please check them out." />
                 <meta name="twitter:card" content="summary_large_immage" />
-                <meta name="twitter:title" content="Blog - GuntxJakka" />
-                <meta name="twitter:description" content="GuntxJakka's blog. Where he mostly document his life." />
+                <meta name="twitter:title" content="Projects - GuntxJakka" />
+                <meta name="twitter:description" content="GuntxJakka's project list. I spend a lot of time on these things so please check them out." />
                 <meta name="twitter:site" content="@GuntxJakka" />
                 <meta name="twitter:image" content="https://res.cloudinary.com/dynrld3nm/image/upload/v1657876472/guntxjakka.me/website_thumb.webp" />
             </Head>
