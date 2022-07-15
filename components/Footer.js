@@ -18,11 +18,11 @@ export default function Footer(){
             <div>
                 <span className="footer-title">Links</span> 
                 <div className="grid grid-flow-col gap-4">
-                    <Link href="https://fb.me/guntchalermphanaphan"><FBForFooter/></Link> 
-                    <Link href="https://youtube.com/channel/UCuhb0ovLdYPxw-K0a6d3Dzw"><YTForFooter/></Link> 
-                    <Link href="https://twitter.com/guntxjakka"><TwitterForFooter/></Link>
-                    <Link href="https://twitch.tv/guntxjakka"><TWTVForFooter/></Link>
-                    <Link href="mailto:gunt@guntxjakka.me"><EmailForFooter/></Link>
+                    <a href="https://fb.me/guntchalermphanaphan"><FBForFooter/></a> 
+                    <a href="https://youtube.com/channel/UCuhb0ovLdYPxw-K0a6d3Dzw"><YTForFooter/></a> 
+                    <a href="https://twitter.com/guntxjakka"><TwitterForFooter/></a>
+                    <a href="https://twitch.tv/guntxjakka"><TWTVForFooter/></a>
+                    <a href="mailto:gunt@guntxjakka.me"><EmailForFooter/></a>
                 </div>
             </div>
         </footer>
