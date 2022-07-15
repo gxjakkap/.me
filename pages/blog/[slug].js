@@ -38,7 +38,7 @@ export default function BlogPage({frontMatter, content}){
         <main>
             <Head>
                 <title>{`${frontMatter.metaTitle} - GuntxJakka`}</title>
-                <meta charset="UTF-8"/>
+                <meta charSet="UTF-8"/>
                 <meta name="description" content={frontMatter.metaDesc} />
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta name="keywords" content={frontMatter.tags.toString()}/>
@@ -67,6 +67,13 @@ export default function BlogPage({frontMatter, content}){
                 </article>
             </div>
             <Footer />
+            <style jsx>
+                {`
+                    a {
+                        @apply underline
+                    }
+                `}
+            </style>
         </main>
     )
 }

@@ -2,8 +2,24 @@ import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import GitHubIconForButton from "../components/svgs/githubforbutton"
 import Name from "../components/nameTypeWriter"
+import { GraduationCaps, Location, Calendar } from "../components/svgs/educationicons"
 import Head from "next/head"
 import Link from "next/link"
+import { fetchJSON } from "../lib/json"
+import {join} from 'path'
+
+const DataPath = join(process.cwd(), 'data')
+
+export async function getStaticProps() {
+  const educationDataArray = await fetchJSON(join(DataPath, 'education.json'))
+  const techStackDataArray = await fetchJSON(join(DataPath, 'techstack.json'))
+  return {
+    props : {
+      educationDataArray,
+      techStackDataArray
+    }
+  }
+}
 
 function GetAge(){
   const birthDay = new Date('September 25, 2005, 00:00:00')
@@ -16,12 +32,61 @@ function openInNewTab(url){
   window.open(url, '_blank', 'noopener,noreferrer')
 }
 
-export default function Home() {
+export function EducationGrid({educationDataArray}){
+  return (
+    <div className="grid gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+      {educationDataArray.map(education => (
+          <div key={education.id} className="p-4 bg-white shadow-md rounded-xl">
+            <h3 className="text-lg font-semibold text-gray-800 md:text-xl">
+              { education.name }
+            </h3>
+            <ul className="mt-3 space-y-1 text-gray-500 md:text-lg">
+              <li className="flex items-center">
+                <GraduationCaps className="w-5 h-5 text-indigo-600" />
+                <p className="ml-2"><a href={education.institutionWebsite} target="_blank" rel="noopener,noreferrer">{ education.institution }</a></p>
+              </li>
+              <li className="flex items-center">
+                <Location className="w-5 h-5 text-indigo-600" />
+                <p className="ml-2">{ education.place }</p>
+              </li>
+              <li class="flex items-center">
+                <Calendar className="w-5 h-5 text-indigo-600" />
+                <p className="ml-2">{ education.timespan }</p>
+              </li>
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    
+  )
+}
+
+export function TechStackGrid({techStackDataArray}){
+  return (
+    <div className="grid grid-cols-2 gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6">
+      {techStackDataArray.map(techData => (
+        <div class="card bg-base-100 dark:bg-gray-800 shadow-xl">
+          <div class="card-body pb-1 mt-0 items-center text-center">
+            <h2 class="card-title">{ techData.name }</h2>
+          </div>
+          <figure class="px-2 pt-2 pb-5">
+            <picture>
+              <img src={techData.image} alt={`${techData.name}'s icon`} class="rounded-xl w-16 h-16 mx-auto" />
+            </picture>
+          </figure>
+        </div>
+      ))}
+    </div>
+    )
+}
+
+export default function Home(props) {
   return (
     <main>
       <Head>
         <title>Home - GuntxJakka</title>
-        <meta charset="UTF-8"/>
+        <meta charSet="UTF-8"/>
         <meta name="description" content="A lost student interested in coding, photographing and video editing." />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="keywords" content="guntxjakka, jakkaphat chalermphanaphan, jakkaphat, chalermphanaphan, gunt, gxjakkap"/>
@@ -49,17 +114,17 @@ export default function Home() {
               className="justify-center ml-auto mr-auto mb-5 rounded-full scale-80"
               />
             </picture>
-            <h1 className="text-4xl text-center dark:text-gray-400  font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl text-center dark:text-gray-400 font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl">
               Hey, I'm <span className="text-primary"><Name /></span>
             </h1>
             <p className="max-w-xl mx-auto mt-6 text-center text-lg text-gray-500 dark:text-gray-400 md:max-w-2xl md:text-xl lg:text-2xl sm:mt-10">
               A lost student interested in coding, photographing and video editing.
               Scroll down to learn more about me
             </p>
-            <div className="flex justify-center mt-8 space-x-6 sm:mt-12">
-              <button className="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
-              <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800 sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
-              <button className="btn btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
+            <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
+              <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
+              <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
+              <button className="btn btn-secondary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
             </div>
           </div>
         </section>
@@ -102,16 +167,26 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <section className="even:bg-primary">
+        <section className="even:bg-primary">
           <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
             <div className="text-center">
-              <h2 className="text-4xl font-semibold tracking-tight text-gray-800 md:text-5xl">
-              Education Background.
+              <h2 className="text-4xl font-semibold tracking-tight text-gray-800 dark:text-neutral md:text-5xl">
+              Education Background
               </h2>
             </div>
-            <div className="grid gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-2 lg:grid-cols-3"></div>
+            <EducationGrid educationDataArray={props.educationDataArray}/>
           </div>
-        </section> */}
+        </section>
+        <section className="even:bg-primary">
+          <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
+            <div className="text-center">
+                <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
+                  My Tech Stack
+                </h2>
+            </div>
+            <TechStackGrid techStackDataArray={props.techStackDataArray} />
+          </div>
+        </section>
       </div>
       <Footer />
     </main>

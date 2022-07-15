@@ -41,7 +41,7 @@ export default function BlogHome({dataArray}){
         <main>
             <Head>
                 <title>Blog - GuntxJakka</title>
-                <meta charset="UTF-8"/>
+                <meta charSet="UTF-8"/>
                 <meta name="description" content="GuntxJakka's blog. Where he mostly document his life." />
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta name="keywords" content="guntxjakka, jakkaphat chalermphanaphan, jakkaphat, chalermphanaphan, gunt, gxjakkap, blog"/>

@@ -1,0 +1,78 @@
+[
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913545/guntxjakka.me/techstack/html_zzf6lo.svg",
+      "name": "HTML"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913543/guntxjakka.me/techstack/css_dywyn4.svg",
+      "name": "CSS"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913549/guntxjakka.me/techstack/javascript_gyadov.svg",
+      "name": "JavaScript"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913547/guntxjakka.me/techstack/node_jwkj7q.svg",
+      "name": "Node.js"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913543/guntxjakka.me/techstack/vue_olhndu.svg",
+      "name": "Vue.js"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913547/guntxjakka.me/techstack/nuxt_pluafl.svg",
+      "name": "Nuxt.js"
+    },
+    {
+        "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/react_ogtyvz.svg",
+        "name": "React.js"
+    },
+    {
+        "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913689/guntxjakka.me/techstack/nextjs_ccv4nb.svg",
+        "name": "Next.js"
+    },
+    {
+        "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/svelte_asex0l.svg",
+        "name": "Svelte"
+    },
+    {
+        "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/svelte_asex0l.svg",
+        "name": "SvelteKit"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/tailwindcss_vibipx.svg",
+      "name": "TailwindCSS"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913548/guntxjakka.me/techstack/vsc_jz4esd.svg",
+      "name": "TypeScript"
+    },
+    {
+        "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657914796/guntxjakka.me/techstack/daisyui_hvjkhf.png",
+        "name": "DaisyUI"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913544/guntxjakka.me/techstack/express_qoip3w.svg",
+      "name": "Express.js"
+    },
+    {
+        "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657915009/guntxjakka.me/techstack/firebase_vxbrn2.png",
+        "name": "Firebase"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913548/guntxjakka.me/techstack/vsc_jz4esd.svg",
+      "name": "VS Code"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913545/guntxjakka.me/techstack/git_ya88mr.svg",
+      "name": "Git"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913541/guntxjakka.me/techstack/python_ltdua2.svg",
+      "name": "Python"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913543/guntxjakka.me/techstack/vercel_v5md5f.svg",
+      "name": "Vercel"
+    }
+  ]

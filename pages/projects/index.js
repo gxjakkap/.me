@@ -41,7 +41,7 @@ export default function ProjectHome({dataArray}){
         <main>
             <Head>
                 <title>Projects - GuntxJakka</title>
-                <meta charset="UTF-8"/>
+                <meta charSet="UTF-8"/>
                 <meta name="description" content="GuntxJakka's project list. I spend a lot of time on these things so please check them out." />
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta name="keywords" content="guntxjakka, jakkaphat chalermphanaphan, jakkaphat, chalermphanaphan, gunt, gxjakkap, project, projects, programming"/>

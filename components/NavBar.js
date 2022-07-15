@@ -16,18 +16,19 @@ export default function NavBar(){
                         <li><a href="https://linktr.ee/guntxjakka" target="_blank" rel="noreferrer">Linktree</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">gg</a>
+                <button className="btn btn-ghost normal-case text-xl"><Link href="/"><picture><img className="mt-1 w-11 h-11" src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png"/></picture></Link></button>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            {/* <div className="navbar-center ">
+                
+            </div> */}
+            <div className="navbar-end hidden lg:flex">
+                {/* <button><DarkModeButton/></button> */}
                 <ul className="menu menu-horizontal p-0">
                     <li><Link href="/">Home</Link></li>
                     <li><Link href="/projects">Projects</Link></li>
                     <li><Link href="/blog">Blog</Link></li>
                     <li><Link href="https://linktr.ee/guntxjakka" target="_blank">Linktree</Link></li>
                 </ul>
-            </div>
-            <div className="navbar-end">
-                {/* <button><DarkModeButton/></button> */}
             </div>
         </div>
     )

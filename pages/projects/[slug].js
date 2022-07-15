@@ -39,23 +39,23 @@ function openInNewTab(url){
 export function ButtonGroup({frontMatter}){
     if (frontMatter.projectLink && frontMatter.githubLink){
         return (
-            <div className="flex justify-center mt-8 space-x-6 sm:mt-12">
-                <button className="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.projectLink)}>Check it out here!</button>
-                <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800 sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.githubLink)}><GitHubIconForButton />GitHub</button>
+            <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
+                <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.projectLink)}>Check it out here!</button>
+                <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.githubLink)}><GitHubIconForButton />GitHub</button>
             </div>
         )
     }
     else if (frontMatter.projectLink) {
             return (
-                <div className="flex justify-center mt-8 space-x-6 sm:mt-12">
-                    <button className="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.projectLink)}>Check it out here!</button>
+                <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
+                    <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.projectLink)}>Check it out here!</button>
                 </div>
             )
         }
     else if (frontMatter.githubLink){
         return (
-            <div className="flex justify-center mt-8 space-x-6 sm:mt-12">
-                <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800 sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.githubLink)}><GitHubIconForButton />GitHub</button>
+            <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
+                <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.githubLink)}><GitHubIconForButton />GitHub</button>
             </div>
         )
     }
@@ -70,7 +70,7 @@ export default function BlogPage({frontMatter, content}){
         <main>
             <Head>
                 <title>{`${frontMatter.metaTitle} - GuntxJakka`}</title>
-                <meta charset="UTF-8"/>
+                <meta charSet="UTF-8"/>
                 <meta name="description" content={frontMatter.metaDesc} />
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta name="keywords" content={frontMatter.tags.toString()}/>
@@ -100,6 +100,13 @@ export default function BlogPage({frontMatter, content}){
                 </article>
             </div>
             <Footer />
+            <style jsx>
+                {`
+                    a {
+                        @apply underline
+                    }
+                `}
+            </style>
         </main>
     )
 }
