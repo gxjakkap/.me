@@ -12,7 +12,7 @@ export default function Footer(){
     return (
         <footer className="footer p-10 bg-neutral dark:bg-base-100 text-neutral-content dark:text-neutral">
             <div>
-            <picture><img className="w-[2.6rem] h-[2.6rem]" src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png"/></picture>
+            <picture><img className="w-[2.6rem] h-[2.6rem]" alt="GuntxJakka's logo" src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png"/></picture>
                 <p>© 2022{getYear()}- GuntxJakka</p>
             </div> 
             <div>

@@ -16,7 +16,7 @@ export default function NavBar(){
                         <li><a href="https://linktr.ee/guntxjakka" target="_blank" rel="noreferrer">Linktree</a></li>
                     </ul>
                 </div>
-                <button className="btn btn-ghost normal-case text-xl"><Link href="/"><picture><img className="mt-1 w-11 h-11" src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png"/></picture></Link></button>
+                <button className="btn btn-ghost normal-case text-xl"><Link href="/"><picture><img className="mt-1 w-11 h-11" alt="GuntxJakka's logo" src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png"/></picture></Link></button>
             </div>
             {/* <div className="navbar-center ">
                 

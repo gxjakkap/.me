@@ -43,13 +43,13 @@ export function EducationGrid({educationDataArray}){
             <ul className="mt-3 space-y-1 text-gray-500 md:text-lg">
               <li className="flex items-center">
                 <GraduationCaps className="w-5 h-5 text-indigo-600" />
-                <p className="ml-2"><a href={education.institutionWebsite} target="_blank" rel="noopener,noreferrer">{ education.institution }</a></p>
+                <p className="ml-2"><a href={education.institutionWebsite} target="_blank" rel="noreferrer">{ education.institution }</a></p>
               </li>
               <li className="flex items-center">
                 <Location className="w-5 h-5 text-indigo-600" />
                 <p className="ml-2">{ education.place }</p>
               </li>
-              <li class="flex items-center">
+              <li className="flex items-center">
                 <Calendar className="w-5 h-5 text-indigo-600" />
                 <p className="ml-2">{ education.timespan }</p>
               </li>
@@ -66,13 +66,13 @@ export function TechStackGrid({techStackDataArray}){
   return (
     <div className="grid grid-cols-2 gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6">
       {techStackDataArray.map(techData => (
-        <div class="card bg-base-100 dark:bg-gray-800 shadow-xl">
-          <div class="card-body pb-1 mt-0 items-center text-center">
-            <h2 class="card-title">{ techData.name }</h2>
+        <div key={techData.name} className="card bg-base-100 dark:bg-gray-800 shadow-xl">
+          <div className="card-body pb-1 mt-0 items-center text-center">
+            <h2 className="card-title">{ techData.name }</h2>
           </div>
-          <figure class="px-2 pt-2 pb-5">
+          <figure className="px-2 pt-2 pb-5">
             <picture>
-              <img src={techData.image} alt={`${techData.name}'s icon`} class="rounded-xl w-16 h-16 mx-auto" />
+              <img src={techData.image} alt={`${techData.name}'s icon`} className="rounded-xl w-16 h-16 mx-auto" />
             </picture>
           </figure>
         </div>
@@ -158,9 +158,9 @@ export default function Home(props) {
                 <p className="leading-relaxed">
                   Now I'm learning and paving my way throught web development. Both
                   frontend and backend. Now I'm somewhat familiar with
-                  <Link href="https://tailwindcss.com/" target="_blank"> Tailwindcss </Link>
+                  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> Tailwindcss </a>
                   and currently learning
-                  <Link href="https://vuejs.org/" target="_blank"> Vue.js</Link>. I also
+                  <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> Vue.js</a>. I also
                   love making Discord bot and some other random stuff.
                 </p>
               </div>
