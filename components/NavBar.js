@@ -13,7 +13,7 @@ export default function NavBar(){
                         <li><Link href="/">Home</Link></li>
                         <li><Link href="/projects">Projects</Link></li>
                         <li><Link href="/blog">Blog</Link></li>
-                        <li><Link href="https://linktr.ee/guntxjakka" target="_blank">Linktree</Link></li>
+                        <li><a href="https://linktr.ee/guntxjakka" target="_blank" rel="noreferrer">Linktree</a></li>
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">gg</a>
