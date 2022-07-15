@@ -4,7 +4,6 @@ import { getAllBlogInfo } from "../../lib/md"
 import { join } from 'path'
 import Head from "next/head"
 import Link from "next/link"
-import Image from "next/image"
 
 const POST_PATH = join(process.cwd(), '_projects')
 
@@ -22,7 +21,7 @@ const ProjectGridElement = ({dataArray}) => {
         <div className="grid gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-2 lg:grid-cols-3">
             {dataArray.map(data => (
                 <div key={data.slug} className="card w-96 bg-base-100 shadow-xl">
-                    <figure><Image src={data.socialImage} className="object-contain" alt="Thumbnail" /></figure>
+                    <figure><picture><img src={data.socialImage} className="object-contain" alt="Thumbnail" /></picture></figure>
                     <div className="card-body">
                         <h2 className="card-title">{data.title}</h2>
                         <p>{data.metaDesc}</p>

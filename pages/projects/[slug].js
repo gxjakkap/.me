@@ -5,7 +5,6 @@ import Footer from "../../components/Footer"
 import { getParsedFileContentBySlug, renderMd } from '../../lib/md'
 import GitHubIconForButton from '../../components/svgs/githubforbutton'
 import Head from 'next/head'
-import Image from 'next/image'
 
 const POST_PATH = join(process.cwd(), '_projects')
 
@@ -94,7 +93,7 @@ export default function BlogPage({frontMatter, content}){
                     <div className="mb-10">
                         <h1 className="text-5xl sm:text-3xl md:text-5xl lg:text-5xl text-center mb-2">{frontMatter.title}</h1>
                         <h3 className="text-lg sm:text-lg md:text-xl lg:text-xl text-center py-5">{frontMatter.metaDesc}</h3>
-                        <Image className="scale-80 content-center ml-auto mr-auto" src={frontMatter.thumbnail} alt="Project Thumbnail"/>
+                        <picture><img className="scale-80 content-center ml-auto mr-auto" src={frontMatter.thumbnail} alt="Project Thumbnail"/></picture>
                         <ButtonGroup frontMatter={frontMatter}/>
                     </div>
                     <div className="text-neutral" dangerouslySetInnerHTML={{__html: content}}/>

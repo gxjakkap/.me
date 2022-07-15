@@ -4,7 +4,6 @@ import GitHubIconForButton from "../components/svgs/githubforbutton"
 import Name from "../components/nameTypeWriter"
 import Head from "next/head"
 import Link from "next/link"
-import Image from "next/image"
 
 function GetAge(){
   const birthDay = new Date('September 25, 2005, 00:00:00')
@@ -43,11 +42,13 @@ export default function Home() {
       <div className="w-full">
         <section className="home-bg">
           <div className="w-full py-10 text-center sm:py-20 md:py-25 lg:py-5 mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl ">
-            <Image
-            src="https://avatars.githubusercontent.com/u/55027998"
-            alt="GuntxJakka's Portrait"
-            className="justify-center ml-auto mr-auto mb-5 rounded-full scale-80"
-            />
+            <picture>
+              <img
+              src="https://avatars.githubusercontent.com/u/55027998"
+              alt="GuntxJakka's Portrait"
+              className="justify-center ml-auto mr-auto mb-5 rounded-full scale-80"
+              />
+            </picture>
             <h1 className="text-4xl text-center dark:text-gray-400  font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl">
               Hey, I'm <span className="text-primary"><Name /></span>
             </h1>
