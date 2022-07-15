@@ -3,8 +3,9 @@ import { join } from 'path'
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
 import { getParsedFileContentBySlug, renderMd } from '../../lib/md'
-import Head from 'next/head'
 import GitHubIconForButton from '../../components/svgs/githubforbutton'
+import Head from 'next/head'
+import Image from 'next/image'
 
 const POST_PATH = join(process.cwd(), '_projects')
 
