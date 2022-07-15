@@ -3,7 +3,6 @@ lockfileVersion: 5.3
 specifiers:
   '@mdx-js/loader': ^2.1.2
   '@mdx-js/react': ^2.1.2
-  '@next/mdx': ^12.2.2
   '@tailwindcss/typography': ^0.5.4
   autoprefixer: ^10.4.7
   daisyui: ^2.19.0
@@ -16,21 +15,12 @@ specifiers:
   react-dom: 18.2.0
   rehype: ^12.0.1
   rehype-add-classes: ^1.0.0
-  rehype-decorate: ^1.0.0-rc.3
-  rehype-stringify: ^9.0.3
   remark: ^14.0.2
   remark-html: ^15.0.1
-  remark-parse: ^10.0.1
-  remark-rehype: ^10.1.0
   tailwindcss: ^3.1.5
-  theme-change: ^2.1.0
-  to-vfile: ^7.2.3
   typewriter-effect: ^2.19.0
-  unified: ^10.1.2
-  unified-stream: ^2.0.0
 
 dependencies:
-  '@next/mdx': 12.2.2_9b8703c6a3f8aa10efc7ca351f5e7334
   daisyui: 2.19.0_a191cbaa25c4a0a9f05cc78eac153be7
   gray-matter: 4.0.3
   next: 12.2.1_react-dom@18.2.0+react@18.2.0
@@ -38,17 +28,9 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   rehype: 12.0.1
   rehype-add-classes: 1.0.0
-  rehype-decorate: 1.0.0-rc.3
-  rehype-stringify: 9.0.3
   remark: 14.0.2
   remark-html: 15.0.1
-  remark-parse: 10.0.1
-  remark-rehype: 10.1.0
-  theme-change: 2.1.0
-  to-vfile: 7.2.3
   typewriter-effect: 2.19.0_react-dom@18.2.0+react@18.2.0
-  unified: 10.1.2
-  unified-stream: 2.0.0
 
 devDependencies:
   '@mdx-js/loader': 2.1.2
@@ -163,16 +145,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/mdx/12.2.2_9b8703c6a3f8aa10efc7ca351f5e7334:
-    resolution: {integrity: sha512-d+yHApu6weFYrAbDj+2vMY3uE8kAnoNu5g3w8B3m3skUh6r1ekkKM2YTktlpNpum/XMnKGiPrIdAX4L4KuVdYg==}
-    peerDependencies:
-      '@mdx-js/loader': '>=0.15.0'
-      '@mdx-js/react': '*'
-    dependencies:
-      '@mdx-js/loader': 2.1.2
-      '@mdx-js/react': 2.1.2_react@18.2.0
-    dev: false
 
   /@next/swc-android-arm-eabi/12.2.1:
     resolution: {integrity: sha512-Gk7fvo1McA9gues9hixoeoxKnvvUusW0P+fya4ZAU3us+bQm1EqSoDrnOrUsdsgwIPQ3HobOJPY5C3xvKOl/tA==}
@@ -2641,10 +2613,6 @@ packages:
       hast-util-select: 1.0.1
     dev: false
 
-  /rehype-decorate/1.0.0-rc.3:
-    resolution: {integrity: sha512-gQVDMo3gCrJUF7pUu5IO/bG+XYFtebRJbwKCqLkjgHxpVNfsr8CV9YN9zT5vzB6kllCFJYJrgPNIYa2ZNM85tQ==}
-    dev: false
-
   /rehype-parse/8.0.4:
     resolution: {integrity: sha512-MJJKONunHjoTh4kc3dsM1v3C9kGrrxvA3U8PxZlP2SjH8RNUSrb+lF7Y0KVaUDnGH2QZ5vAn7ulkiajM9ifuqg==}
     dependencies:
@@ -2706,6 +2674,7 @@ packages:
       '@types/mdast': 3.0.10
       mdast-util-to-hast: 12.1.2
       unified: 10.1.2
+    dev: true
 
   /remark-stringify/10.0.2:
     resolution: {integrity: sha512-6wV3pvbPvHkbNnWB0wdDvVFHOe1hBRAx1Q/5g/EpH4RppAII6J8Gnwe7VbHuXaoKIF6LAg6ExTel/+kNqSQ7lw==}
@@ -2972,22 +2941,11 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
-  /theme-change/2.1.0:
-    resolution: {integrity: sha512-D8SZJR599b39VrWCgNTINAQYjTc7XbypoIFaDT1iwbH2IHEhTb5IqWHBwXIpJWDYFtfV7FhlHUVy0PlewPYgLQ==}
-    dev: false
-
   /to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
-
-  /to-vfile/7.2.3:
-    resolution: {integrity: sha512-QO0A9aE6Z/YkmQadJ0syxpmNXtcQiu0qAtCKYKD5cS3EfgfFTAXfgLX6AOaBrSfWSek5nfsMf3gBZ9KGVFcLuw==}
-    dependencies:
-      is-buffer: 2.0.5
-      vfile: 5.3.4
-    dev: false
 
   /trim-lines/3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
@@ -3053,13 +3011,6 @@ packages:
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
     dev: true
-
-  /unified-stream/2.0.0:
-    resolution: {integrity: sha512-KdwODjgqGsTbHMLqm57qLxNAkbCboD5EMPC4BULs/9iy5ZTsw3xgc0BUjeCmABt/yfZt0k7rgkBLcdiZ8LwZug==}
-    dependencies:
-      unified: 10.1.2
-      vfile: 5.3.4
-    dev: false
 
   /unified/10.1.2:
     resolution: {integrity: sha512-pUSWAi/RAnVy1Pif2kAoeWNBa3JVrx0MId2LASj8G+7AiHWoKZNTomq6LG326T68U7/e263X6fTdcXIy7XnF7Q==}
