@@ -54,9 +54,9 @@ export default function Home() {
               Scroll down to learn more about me
             </p>
             <div className="flex justify-center mt-8 space-x-6 sm:mt-12">
-              <button className="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg"><a href="/projects">My Projects</a></button>
+              <button className="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
               <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800 sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
-              <button className="btn btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog"><a>My Blog</a></Link></button>
+              <button className="btn btn-secondary btn-xs sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
             </div>
           </div>
         </section>

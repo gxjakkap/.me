@@ -20,7 +20,7 @@ const BlogGridElement = ({dataArray}) => {
     return (
         <div className="grid gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-2 lg:grid-cols-3">
             {dataArray.map(data => (
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div key={data.slug} className="card w-96 bg-base-100 shadow-xl">
                     <figure><img src={data.socialImage} className="object-contain" alt="Thumbnail" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{data.title}</h2>
