@@ -2,10 +2,12 @@ import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import GitHubIconForButton from "../components/svgs/githubforbutton"
 import Name from "../components/nameTypeWriter"
-import { GraduationCaps, Location, Calendar } from "../components/svgs/educationicons"
+import EducationGrid from "../components/grid/Education"
+import TechStackGrid from "../components/grid/TechStack"
 import Head from "next/head"
 import Link from "next/link"
 import { fetchJSON } from "../lib/json"
+import GetAge from "../lib/birthDay"
 import {join} from 'path'
 
 const DataPath = join(process.cwd(), 'data')
@@ -21,65 +23,12 @@ export async function getStaticProps() {
   }
 }
 
-function GetAge(){
-  const birthDay = new Date('September 25, 2005, 00:00:00')
-  const today = new Date()
-  const diff = ((today.getTime() - birthDay.getTime()) / 1000) / (60*60*24)
-  return Math.abs(Math.round(diff / 365.25))
-}
+
 
 function openInNewTab(url){
   window.open(url, '_blank', 'noopener,noreferrer')
 }
 
-export function EducationGrid({educationDataArray}){
-  return (
-    <div className="grid gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-2 lg:grid-cols-3">
-      {educationDataArray.map(education => (
-          <div key={education.id} className="p-4 bg-white shadow-md rounded-xl">
-            <h3 className="text-lg font-semibold text-gray-800 md:text-xl">
-              { education.name }
-            </h3>
-            <ul className="mt-3 space-y-1 text-gray-500 md:text-lg">
-              <li className="flex items-center">
-                <GraduationCaps className="w-5 h-5 text-indigo-600" />
-                <p className="ml-2"><a href={education.institutionWebsite} target="_blank" rel="noreferrer">{ education.institution }</a></p>
-              </li>
-              <li className="flex items-center">
-                <Location className="w-5 h-5 text-indigo-600" />
-                <p className="ml-2">{ education.place }</p>
-              </li>
-              <li className="flex items-center">
-                <Calendar className="w-5 h-5 text-indigo-600" />
-                <p className="ml-2">{ education.timespan }</p>
-              </li>
-            </ul>
-          </div>
-        ))
-      }
-    </div>
-    
-  )
-}
-
-export function TechStackGrid({techStackDataArray}){
-  return (
-    <div className="grid grid-cols-2 gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6">
-      {techStackDataArray.map(techData => (
-        <div key={techData.name} className="card bg-base-100 dark:bg-gray-800 shadow-xl">
-          <div className="card-body pb-1 mt-0 items-center text-center">
-            <h2 className="card-title">{ techData.name }</h2>
-          </div>
-          <figure className="px-2 pt-2 pb-5">
-            <picture>
-              <img src={techData.image} alt={`${techData.name}'s icon`} className="rounded-xl w-16 h-16 mx-auto" />
-            </picture>
-          </figure>
-        </div>
-      ))}
-    </div>
-    )
-}
 
 export default function Home(props) {
   return (
@@ -148,10 +97,7 @@ export default function Home(props) {
               </div>
               <div>
                 <p className="leading-relaxed">
-                  I used to run my own Minecraft server but it flops. I also have my
-                  interest in photographing and video editing. I have my interest in
-                  coding and programming in general. Also taught myself crappy
-                  Python and Javascript.
+                  I used to run my own Minecraft server but it never took of. I also like photographing and video editing. //Will add more sentences here//
                 </p>
               </div>
               <div>
@@ -167,7 +113,7 @@ export default function Home(props) {
             </div>
           </div>
         </section>
-        <section className="even:bg-primary">
+        <section className="home-bg">
           <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
             <div className="text-center">
               <h2 className="text-4xl font-semibold tracking-tight text-gray-800 dark:text-neutral md:text-5xl">

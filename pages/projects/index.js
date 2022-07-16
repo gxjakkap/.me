@@ -1,14 +1,14 @@
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
-import { getAllBlogInfo } from "../../lib/md"
 import { join } from 'path'
 import Head from "next/head"
 import Link from "next/link"
+import { fetchJSON } from "../../lib/json"
 
-const POST_PATH = join(process.cwd(), '_projects')
+const DataPath = join(process.cwd(), 'data')
 
 export async function getStaticProps() {
-    const dataArray = await getAllBlogInfo(POST_PATH)
+    const dataArray = await fetchJSON(join(DataPath, 'projects.json'))
     return {
         props: {
             dataArray: dataArray,

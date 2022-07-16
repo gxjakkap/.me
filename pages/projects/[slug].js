@@ -1,33 +1,43 @@
-import fs from 'fs'
-import { join } from 'path'
+import path, { join } from 'path'
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
-import { getParsedFileContentBySlug, renderMd } from '../../lib/md'
 import GitHubIconForButton from '../../components/svgs/githubforbutton'
+import { TechStackGridForProjectPage } from '../../components/grid/TechStack'
+import { fetchJSON } from '../../lib/json'
 import Head from 'next/head'
 
-const POST_PATH = join(process.cwd(), '_projects')
+const DataPath = join(process.cwd(), 'data')
 
 export const getStaticPaths = async() => {
-    const paths = fs
-        .readdirSync(POST_PATH)
-        .map((path) => path.replace(/\.mdx?$/, ''))
-        .map((slug) => ({ params: { slug } }))
-
-        return {
-            paths,
-            fallback: false
-        }
+    const paths = []
+    const data = await fetchJSON(join(DataPath, 'projects.json'))
+    data.forEach(element => {
+        paths.push({params: {slug: element.slug}})
+    });
+    return {
+        paths,
+        fallback: false
+    }
 
 }
 
 export const getStaticProps = async({params}) => {
-    const mdContent = getParsedFileContentBySlug(params.slug, POST_PATH)
-    const html = await renderMd(mdContent.content)
+    const projectsDataArray = await fetchJSON(join(DataPath, 'projects.json'))
+    const projectData = projectsDataArray.find(obj => obj.slug === params.slug)
     return {
         props: {
-            frontMatter: mdContent.frontMatter,
-            content: html
+            frontMatter: {
+                title: projectData.title,
+                metaTitle: projectData.metatitle,
+                metaDesc: projectData.metaDesc,
+                socialImage: projectData.socialImage,
+                thumbnail: projectData.thumbnail,
+                githubLink: projectData.githubLink,
+                projectLink: projectData.projectLink,
+                tags: projectData.tags,
+            },
+            content: projectData.content,
+            stack: projectData.stack
         }
     }
 }
@@ -36,7 +46,19 @@ function openInNewTab(url){
     window.open(url, '_blank', 'noopener,noreferrer')
 }
 
-export function ButtonGroup({frontMatter}){
+function TechStackGrid({stack}){
+    if (stack){
+        return (
+            <div className="w-full">
+                <h2 className="text-3xl sm:text-2xl md:text-3xl text-center mt-10">Tech Stack</h2>
+                <TechStackGridForProjectPage techStackDataArray={stack} />
+            </div>
+        )
+    }
+    else return <></>
+}
+
+function ButtonGroup({frontMatter}){
     if (frontMatter.projectLink && frontMatter.githubLink){
         return (
             <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
@@ -64,8 +86,18 @@ export function ButtonGroup({frontMatter}){
     }
 }
 
+function BadgeGroup({tagsArray}){
+    return (
+        <div className="text-center h-7 mb-3">
+            {tagsArray.map(tag => (
+                <div key={tag} className="badge badge-primary justify-center mx-1 h-5">{tag}</div>
+            ))}
+        </div>
+    )
+}
 
-export default function BlogPage({frontMatter, content}){
+
+export default function BlogPage({frontMatter, content, stack}){
     return (
         <main>
             <Head>
@@ -93,10 +125,14 @@ export default function BlogPage({frontMatter, content}){
                     <div className="mb-10">
                         <h1 className="text-5xl sm:text-3xl md:text-5xl lg:text-5xl text-center mb-2">{frontMatter.title}</h1>
                         <h3 className="text-lg sm:text-lg md:text-xl lg:text-xl text-center py-5">{frontMatter.metaDesc}</h3>
+                        <BadgeGroup className="text-center" tagsArray={frontMatter.tags} />
                         <picture><img className="scale-80 content-center ml-auto mr-auto" src={frontMatter.thumbnail} alt="Project Thumbnail"/></picture>
                         <ButtonGroup frontMatter={frontMatter}/>
                     </div>
-                    <div className="text-neutral" dangerouslySetInnerHTML={{__html: content}}/>
+                    <div className="text-neutral">
+                        {content}
+                    </div>
+                    <TechStackGrid stack={stack} />
                 </article>
             </div>
             <Footer />

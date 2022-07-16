@@ -12,11 +12,11 @@ export const getStaticPaths = async() => {
         .readdirSync(POST_PATH)
         .map((path) => path.replace(/\.mdx?$/, ''))
         .map((slug) => ({ params: { slug } }))
-
-        return {
-            paths,
-            fallback: false
-        }
+    
+    return {
+        paths,
+        fallback: false
+    }
 
 }
 

@@ -23,6 +23,9 @@ export default function Name(){
                     .typeString('gxjakkap')
                     .pauseFor(2000)
                     .deleteAll()
+                    .typeString('GuntFuPanda')
+                    .pauseFor(1000)
+                    .deleteAll()
                     .start()
             }} />
     )
