@@ -23,7 +23,7 @@ export default function Name(){
                     .typeString('gxjakkap')
                     .pauseFor(2000)
                     .deleteAll()
-                    .typeString('GuntFuPanda')
+                    .typeString('Jakka')
                     .pauseFor(1000)
                     .deleteAll()
                     .start()

@@ -18,7 +18,7 @@ export async function getStaticProps() {
 
 const BlogGridElement = ({dataArray}) => {
     return (
-        <div className="grid gap-6 mt-10 sm:mt-12 md:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid-container">
             {dataArray.map(data => (
                 <div key={data.slug} className="card w-96 bg-base-100 shadow-xl">
                     <figure><picture><img src={data.socialImage} className="object-contain" alt="Thumbnail" /></picture></figure>
