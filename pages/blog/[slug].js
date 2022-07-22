@@ -49,7 +49,7 @@ export default function BlogPage({frontMatter, content}){
                 <meta property="og:image" content={frontMatter.socialImage} />
                 <meta property="og:site_name" content="GuntxJakka" />
                 <meta property="og:description" content={frontMatter.metaDesc} />
-                <meta name="twitter:card" content="summary_large_immage" />
+                <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content={`${frontMatter.metaTitle}  - GuntxJakka`} />
                 <meta name="twitter:description" content={frontMatter.metaDesc} />
                 <meta name="twitter:site" content="@GuntxJakka" />

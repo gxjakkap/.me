@@ -52,7 +52,7 @@ export default function ProjectHome({dataArray}){
                 <meta property="og:image" content="https://res.cloudinary.com/dynrld3nm/image/upload/v1657876472/guntxjakka.me/website_thumb.webp" />
                 <meta property="og:site_name" content="GuntxJakka" />
                 <meta property="og:description" content="GuntxJakka's project list. I spend a lot of time on these things so please check them out." />
-                <meta name="twitter:card" content="summary_large_immage" />
+                <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content="Projects - GuntxJakka" />
                 <meta name="twitter:description" content="GuntxJakka's project list. I spend a lot of time on these things so please check them out." />
                 <meta name="twitter:site" content="@GuntxJakka" />

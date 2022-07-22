@@ -52,7 +52,7 @@ export default function BlogHome({dataArray}){
                 <meta property="og:image" content="https://res.cloudinary.com/dynrld3nm/image/upload/v1657876472/guntxjakka.me/website_thumb.webp" />
                 <meta property="og:site_name" content="GuntxJakka" />
                 <meta property="og:description" content="GuntxJakka's blog. Where he mostly document his life." />
-                <meta name="twitter:card" content="summary_large_immage" />
+                <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content="Blog - GuntxJakka" />
                 <meta name="twitter:description" content="GuntxJakka's blog. Where he mostly document his life." />
                 <meta name="twitter:site" content="@GuntxJakka" />

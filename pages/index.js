@@ -46,7 +46,7 @@ export default function Home(props) {
         <meta property="og:image" content="https://res.cloudinary.com/dynrld3nm/image/upload/v1657876472/guntxjakka.me/website_thumb.webp" />
         <meta property="og:site_name" content="GuntxJakka" />
         <meta property="og:description" content="A lost student interested in coding, photographing and video editing." />
-        <meta name="twitter:card" content="summary_large_immage" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Home - GuntxJakka" />
         <meta name="twitter:description" content="A lost student interested in coding, photographing and video editing." />
         <meta name="twitter:site" content="@GuntxJakka" />
