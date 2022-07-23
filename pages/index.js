@@ -83,21 +83,21 @@ export default function Home(props) {
               <h2 className="text-4xl font-semibold tracking-tight text-gray-50 md:text-5xl">
                 About Me.
               </h2>
-              <p className="max-w-2xl mx-auto mt-2 text-gray-200 md:text-lg sm:mt-3 md:mt-4">
-                Let me introduce myself.
-              </p>
             </div>
             <div className="grid gap-6 mt-10 text-lg text-gray-100 md:text-xl sm:mt-12 md:mt-16 sm:grid-cols-2 md:grid-cols-3">
               <div>
                 <p className="leading-relaxed">
                   Hey, I'm Jakkaphat "Gunt" Chalermphanaphan. A
                   <span> {GetAge()}</span>-year-old boy interested in coding and computer stuff. Currently
-                  located in Thailand. I spend half of my childhood in gaming.
+                  located in Thailand.
                 </p>
               </div>
               <div>
                 <p className="leading-relaxed">
-                  I used to run my own Minecraft server but it never took of. I also like photographing and video editing. //Will add more sentences here//
+                  I enjoy playing video games, programming and photographing.   
+                  Programming has always piqued my curiosity. Particularly for web applications. 
+                  I've worked on a variety of projects throughout the years. 
+                  Check it out {<Link href="/projects"><a className="underline">here</a></Link>}.
                 </p>
               </div>
               <div>
@@ -106,7 +106,7 @@ export default function Home(props) {
                   frontend and backend. Now I'm somewhat familiar with
                   <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> Tailwindcss </a>
                   and currently learning
-                  <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> Vue.js</a>. I also
+                  <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> Vue.js</a>, <a href="https://svelte.dev/" target="_blank" rel="noreferrer"> Svelte.js</a> and <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> React.js</a>. I also
                   love making Discord bot and some other random stuff.
                 </p>
               </div>
