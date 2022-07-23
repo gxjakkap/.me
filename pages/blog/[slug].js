@@ -31,6 +31,17 @@ export const getStaticProps = async({params}) => {
     }
 }
 
+function BadgeGroup({tagsArray}){
+    return (
+        <div className="text-center h-7 mb-3">
+            {tagsArray.map(tag => (
+                <div key={tag} className="badge badge-primary justify-center mx-1 h-5">{tag}</div>
+            ))}
+        </div>
+    )
+}
+
+
 
 
 export default function BlogPage({frontMatter, content}){
@@ -61,6 +72,7 @@ export default function BlogPage({frontMatter, content}){
                     <div className="mb-10">
                         <h1 className="text-5xl sm:text-3xl md:text-5xl lg:text-5xl text-center mb-2">{frontMatter.title}</h1>
                         <h3 className="text-lg sm:text-lg md:text-xl lg:text-xl text-center py-5">{frontMatter.date}</h3>
+                        <BadgeGroup className="text-center" tagsArray={frontMatter.tags} />
                         <picture><img className="scale-80 content-center ml-auto mr-auto" src={frontMatter.socialImage} alt="Blog Thumbnail"/></picture>
                     </div>
                     <div className="text-neutral" dangerouslySetInnerHTML={{__html: content}}/>

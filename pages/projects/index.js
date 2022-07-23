@@ -16,6 +16,16 @@ export async function getStaticProps() {
     }
 }
 
+const BadgeGroup = ({tagsArray}) => {
+    return (
+        <div className="mb-5">
+            {tagsArray.map(tag => (
+                <div key={tag} className="badge badge-primary justify-center mx-1 h-5">{tag}</div>
+            ))}
+        </div>
+    )
+}
+
 const ProjectGridElement = ({dataArray}) => {
     return (
         <div className="grid-container">
@@ -25,7 +35,8 @@ const ProjectGridElement = ({dataArray}) => {
                     <div className="card-body">
                         <h2 className="card-title">{data.title}</h2>
                         <p>{data.metaDesc}</p>
-                        <div className="card-actions justify-end"> 
+                        <BadgeGroup className="mb-2" tagsArray={data.tags}/>
+                        <div className="card-actions justify-end mt-2"> 
                             <Link href={`/projects/${data.slug}`}><button className={"btn btn-primary"}>Check it out</button></Link>
                         </div>
                     </div>
