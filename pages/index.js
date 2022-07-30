@@ -36,7 +36,7 @@ export default function Home(props) {
       <Head>
         <title>Home - GuntxJakka</title>
         <meta charSet="UTF-8"/>
-        <meta name="description" content="A lost student interested in coding, photographing and video editing." />
+        <meta name="description" content="Hi, My name is Gunt. I'm a student interested in overall programming and computer stuff. Currently located in Thailand." />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="keywords" content="guntxjakka, jakkaphat chalermphanaphan, jakkaphat, chalermphanaphan, gunt, gxjakkap"/>
         <meta name="author" content="Jakkaphat Chalermphanaphan"/>
@@ -64,7 +64,7 @@ export default function Home(props) {
               />
             </picture>
             <h1 className="text-4xl text-center dark:text-gray-400 font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl">
-              Hey, I'm <span className="text-primary"><Name /></span>
+              Hey, I'm <span className="text-primary"><Name alt="Gunt" /></span>
             </h1>
             <p className="max-w-xl mx-auto mt-6 text-center text-lg text-gray-500 dark:text-gray-400 md:max-w-2xl md:text-xl lg:text-2xl sm:mt-10">
               A lost student interested in coding, photographing and video editing.
