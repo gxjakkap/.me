@@ -34,6 +34,7 @@ const BlogGridElement = ({dataArray}) => {
                     <figure><picture><img src={data.socialImage} className="object-contain" alt="Thumbnail" /></picture></figure>
                     <div className="card-body">
                         <h2 className="card-title">{data.title}</h2>
+                        {/* <p>{data.date}</p> */}
                         <p>{data.metaDesc}</p>
                         <BadgeGroup tagsArray={data.tags}/>
                         <div className="card-actions justify-end"> 
