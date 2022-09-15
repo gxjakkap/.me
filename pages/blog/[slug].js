@@ -26,7 +26,8 @@ export const getStaticProps = async({params}) => {
     return {
         props: {
             frontMatter: mdContent.frontMatter,
-            content: html
+            content: html,
+            readTime: mdContent.readTime
         }
     }
 }
@@ -44,7 +45,7 @@ function BadgeGroup({tagsArray}){
 
 
 
-export default function BlogPage({frontMatter, content}){
+export default function BlogPage({frontMatter, content, readTime}){
     return (
         <main>
             <Head>
@@ -72,7 +73,8 @@ export default function BlogPage({frontMatter, content}){
                     <div className="mb-10">
                         <div className="ml-auto mr-auto">
                             <h1 className="text-5xl sm:text-3xl md:text-5xl lg:text-5xl text-center mb-2 ">{frontMatter.title}</h1>
-                            <h3 className="text-lg sm:text-lg md:text-xl lg:text-xl text-center py-5">{frontMatter.date}</h3>
+                            <h3 className="text-lg sm:text-lg md:text-xl lg:text-xl text-center mt-5">{frontMatter.date}</h3>
+                            <h3 className="text-base sm:text-base md:text-base lg:text-base text-center mb-5">{readTime}</h3>
                         </div>
                         <BadgeGroup className="text-center" tagsArray={frontMatter.tags} />
                         <picture><img className="rounded-xl scale-80 content-center ml-auto mr-auto" src={frontMatter.socialImage} alt="Blog Thumbnail"/></picture>
