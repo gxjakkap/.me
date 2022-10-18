@@ -72,9 +72,16 @@ export default function Home(props) {
             </p>
             <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
               <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
-              <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
+              <button className="btn bg-gray-900 text-gray-50 border-0 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
               <button className="btn btn-secondary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
+              <button className="btn bg-sky-800 btn-sm sm:btn-sm md:btn-md lg:btn-lg text-white"><Link href="/links">My Links</Link></button>
             </div>
+            {/* <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12 space-y-4 w-3/4 ml-auto mr-auto flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row">
+              <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
+              <button className="btn bg-gray-900 text-gray-50 border-0 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
+              <button className="btn btn-secondary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
+              <button className="btn bg-sky-800 btn-sm sm:btn-sm md:btn-md lg:btn-lg text-white"><Link href="/links">My Links</Link></button>
+            </div> */}
           </div>
         </section>
         <section className="even:bg-primary">
