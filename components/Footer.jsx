@@ -1,5 +1,4 @@
-import {FBForFooter, YTForFooter, TwitterForFooter, TWTVForFooter, EmailForFooter} from './svgs/footericons'
-import Link from 'next/link'
+import {FBForFooter, YTForFooter, TwitterForFooter, TWTVForFooter, EmailForFooter, GitHubForFooter} from './svgs/footericons'
 
 function getYear(){
     const today = new Date()
@@ -18,6 +17,7 @@ export default function Footer(){
             <div>
                 <span className="footer-title">Links</span> 
                 <div className="grid grid-flow-col gap-4">
+                    <a href="https://github.com/gxjakkap"><GitHubForFooter/></a> 
                     <a href="https://fb.me/guntchalermphanaphan"><FBForFooter/></a> 
                     <a href="https://youtube.com/channel/UCuhb0ovLdYPxw-K0a6d3Dzw"><YTForFooter/></a> 
                     <a href="https://twitter.com/guntxjakka"><TwitterForFooter/></a>
