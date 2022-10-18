@@ -74,5 +74,17 @@
     {
       "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913543/guntxjakka.me/techstack/vercel_v5md5f.svg",
       "name": "Vercel"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913547/guntxjakka.me/techstack/php_abnfk2.svg",
+      "name": "php"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913543/guntxjakka.me/techstack/bootstrap_nyznsu.svg",
+      "name": "Bootstrap"
+    },
+    {
+      "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913545/guntxjakka.me/techstack/mysql_uct7sm.svg",
+      "name": "MySQL"
     }
   ]

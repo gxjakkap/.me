@@ -15,7 +15,7 @@ const NavList = ({isMobile}) => {
             <li><Link href="/"><a>{Icons.home}Home</a></Link></li>
             <li><Link href="/projects"><a>{Icons.projects}Projects</a></Link></li>
             <li><Link href="/blog"><a>{Icons.blog}Blog</a></Link></li>
-            <li><a href="https://linktr.ee/guntxjakka" target="_blank" rel="noreferrer">{Icons.linktree}Linktree</a></li>
+            <li><Link href="/links"><a>{Icons.linktree}Links</a></Link></li>
         </>
     )
 
@@ -24,7 +24,7 @@ const NavList = ({isMobile}) => {
             <li><Link href="/"><a>Home</a></Link></li>
             <li><Link href="/projects"><a>Projects</a></Link></li>
             <li><Link href="/blog"><a>Blog</a></Link></li>
-            <li><a href="https://linktr.ee/guntxjakka" target="_blank" rel="noreferrer">Linktree</a></li>
+            <li><Link href="/links"><a>Links</a></Link></li>
         </>
     )
 
