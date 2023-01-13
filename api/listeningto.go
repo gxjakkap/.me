@@ -1,4 +1,4 @@
-package listeningto
+package main
 
 import (
 	b64 "encoding/base64"
@@ -291,7 +291,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Internal Server Error: JSON Marshal fRes", http.StatusInternalServerError)
 		return
 	} */
-
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	w.WriteHeader(http.StatusOK)
 	if _, err := fmt.Fprintf(w, string(fRes)); err != nil {
 		http.Error(w, fmt.Sprintf("Internal Server Error: %s", err.Error()), http.StatusInternalServerError)
