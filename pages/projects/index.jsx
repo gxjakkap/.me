@@ -40,7 +40,7 @@ const ProjectGridElement = ({dataArray}) => {
                             <Link href={`/projects/${data.slug}`}><button className={"btn btn-primary"}>Check it out</button></Link>
                         </div>
                     </div>
-              </div>
+                </div>
             ))}
     </div>
     )
