@@ -1,14 +1,16 @@
-import path, { join } from 'path'
+/* import path, { join } from 'path' */
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
 import GitHubIconForButton from '../../components/svgs/githubforbutton'
 import { TechStackGridForProjectPage } from '../../components/grid/TechStack'
-import { fetchJSON } from '../../lib/json'
+/* import { fetchJSON } from '../../lib/json' */
+import { getProjectData } from '../../lib/contentful'
+import { renderMd } from '../../lib/md'
 import Head from 'next/head'
 
-const DataPath = join(process.cwd(), 'data')
+/* const DataPath = join(process.cwd(), 'data') */
 
-export const getStaticPaths = async() => {
+/* export const getStaticPaths = async() => {
     const paths = []
     const data = await fetchJSON(join(DataPath, 'projects.json'))
     data.forEach(element => {
@@ -19,9 +21,9 @@ export const getStaticPaths = async() => {
         fallback: false
     }
 
-}
+} */
 
-export const getStaticProps = async({params}) => {
+/* export const getStaticProps = async({params}) => {
     const projectsDataArray = await fetchJSON(join(DataPath, 'projects.json'))
     const projectData = projectsDataArray.find(obj => obj.slug === params.slug)
     return {
@@ -40,6 +42,48 @@ export const getStaticProps = async({params}) => {
             stack: projectData.stack
         }
     }
+} */
+
+export const getServerSideProps = async ({req, res, params}) => {
+    const slug = params.slug
+    const data = await getProjectData(slug)
+
+    if (data.error){
+        if (data.errorCode === 404){
+            return {
+                notFound: true
+            }
+        }
+        else {
+            throw new Error('Internal Server Error')
+        }
+    }
+
+    const projectData = data.data
+
+    const htmlArr = await Promise.all(projectData.content.map(async (c) => {
+        const htmlc = await renderMd(c.content[0].value)
+        console.log(htmlc)
+        return htmlc
+    }))
+
+    return {
+        props: {
+            frontMatter: {
+                title: projectData.title,
+                metaTitle: projectData.title,
+                metaDesc: projectData.description,
+                socialImage: projectData.thumbnail,
+                thumbnail: projectData.thumbnail,
+                githubLink: projectData.githubLink,
+                projectLink: projectData.projectLink,
+                tags: projectData.tags,
+            },
+            content: htmlArr,
+            stack: projectData.stack
+        }
+    }
+
 }
 
 function openInNewTab(url){
@@ -129,9 +173,13 @@ export default function BlogPage({frontMatter, content, stack}){
                         <picture><img className="scale-80 content-center ml-auto mr-auto" src={frontMatter.thumbnail} alt="Project Thumbnail"/></picture>
                         <ButtonGroup frontMatter={frontMatter}/>
                     </div>
-                    <div className="text-neutral">
-                        {content}
-                    </div>
+                    {content.map((paragraphcontent, k) => (
+                        <>
+                            <div className="text-neutral text-lg" key={k} dangerouslySetInnerHTML={{__html: paragraphcontent}}/>
+                            <br />
+                        </>
+                        
+                    ))}
                     <TechStackGrid stack={stack} />
                 </article>
             </div>

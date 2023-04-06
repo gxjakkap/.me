@@ -1,17 +1,14 @@
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
-import { getAllBlogInfo } from "../../lib/md"
-import { join } from 'path'
+import { getAllBlogInfo } from "../../lib/contentful"
 import Head from "next/head"
 import Link from "next/link"
 
-const POST_PATH = join(process.cwd(), '_blog')
-
-export async function getStaticProps() {
-    const dataArray = await getAllBlogInfo(POST_PATH)
+export async function getServerSideProps(context) {
+    const dataArray = await getAllBlogInfo()
     return {
         props: {
-            dataArray: dataArray,
+            dataArray
         }
     }
 }
@@ -34,7 +31,6 @@ const BlogGridElement = ({dataArray}) => {
                     <figure><picture><img src={data.socialImage} className="object-contain" alt="Thumbnail" /></picture></figure>
                     <div className="card-body">
                         <h2 className="card-title">{data.title}</h2>
-                        {/* <p>{data.date}</p> */}
                         <p>{data.metaDesc}</p>
                         <BadgeGroup tagsArray={data.tags}/>
                         <div className="card-actions justify-end"> 

@@ -30,7 +30,7 @@ function openInNewTab(url){
 }
 
 
-export default function Home(props) {
+export default function Home ({ educationDataArray, techStackDataArray}) {
   return (
     <main>
       <Head>
@@ -64,7 +64,7 @@ export default function Home(props) {
               />
             </picture>
             <h1 className="text-4xl text-center dark:text-gray-400 font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl">
-              Hey, I'm <span className="text-primary"><Name alt="Gunt" /></span>
+              Hey, I'm <span className="text-primary"><Name /></span>
             </h1>
             <p className="max-w-xl mx-auto mt-6 text-center text-lg text-gray-500 dark:text-gray-400 md:max-w-2xl md:text-xl lg:text-2xl sm:mt-10">
               A lost student interested in coding, photographing and video editing.
@@ -127,7 +127,7 @@ export default function Home(props) {
               Education Background
               </h2>
             </div>
-            <EducationGrid educationDataArray={props.educationDataArray}/>
+            <EducationGrid educationDataArray={educationDataArray}/>
           </div>
         </section>
         <section className="even:bg-primary">
@@ -137,7 +137,7 @@ export default function Home(props) {
                   My Tech Stack
                 </h2>
             </div>
-            <TechStackGrid techStackDataArray={props.techStackDataArray} />
+            <TechStackGrid techStackDataArray={techStackDataArray} />
           </div>
         </section>
       </div>

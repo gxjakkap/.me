@@ -1,14 +1,24 @@
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
-import { join } from 'path'
+/* import { join } from 'path' */
+import { getAllProjects } from "../../lib/contentful"
 import Head from "next/head"
 import Link from "next/link"
-import { fetchJSON } from "../../lib/json"
+/* import { fetchJSON } from "../../lib/json" */
 
-const DataPath = join(process.cwd(), 'data')
+/* const DataPath = join(process.cwd(), 'data')
 
 export async function getStaticProps() {
     const dataArray = await fetchJSON(join(DataPath, 'projects.json'))
+    return {
+        props: {
+            dataArray: dataArray,
+        }
+    }
+} */
+
+export const getServerSideProps = async () => {
+    const dataArray = await getAllProjects()
     return {
         props: {
             dataArray: dataArray,
@@ -31,10 +41,10 @@ const ProjectGridElement = ({dataArray}) => {
         <div className="grid-container">
             {dataArray.map(data => (
                 <div key={data.slug} className="card w-96 bg-base-100 shadow-xl">
-                    <figure><picture><img src={data.socialImage} className="object-contain" alt="Thumbnail" /></picture></figure>
+                    <figure><picture><img src={data.thumbnail} className="object-contain" alt="Thumbnail" /></picture></figure>
                     <div className="card-body">
                         <h2 className="card-title">{data.title}</h2>
-                        <p>{data.metaDesc}</p>
+                        <p>{data.description}</p>
                         <BadgeGroup className="mb-2" tagsArray={data.tags}/>
                         <div className="card-actions justify-end mt-2"> 
                             <Link href={`/projects/${data.slug}`}><button className={"btn btn-primary"}>Check it out</button></Link>
