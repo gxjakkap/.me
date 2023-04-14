@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.home-bg {
-    @apply bg-gradient-to-r from-[#ffe4e6] to-[#bae6fd] dark:from-blue-800 dark:via-[#2c415f] dark:to-slate-900
-    
-}
-
 .grid-container {
     @apply grid justify-center gap-6 mt-10 sm:mt-12 md:mt-16 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3
 }

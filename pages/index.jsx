@@ -10,6 +10,8 @@ import { fetchJSON } from "../lib/json"
 import GetAge from "../lib/birthDay"
 import {join} from 'path'
 
+import styles from "../styles/Index.module.css"
+
 const DataPath = join(process.cwd(), 'data')
 
 export async function getStaticProps() {
@@ -54,7 +56,7 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
       </Head>
       <NavBar />
       <div className="w-full">
-        <section className="home-bg">
+        <section className={styles.homebg}>
           <div className="w-full py-10 text-center sm:py-20 md:py-25 lg:py-5 mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl ">
             <picture>
               <img
@@ -63,10 +65,10 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
               className="justify-center ml-auto mr-auto mb-5 rounded-full scale-80"
               />
             </picture>
-            <h1 className="text-4xl text-center dark:text-gray-400 font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl text-center font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl">
               Hey, I'm <span className="text-primary"><Name /></span>
             </h1>
-            <p className="max-w-xl mx-auto mt-6 text-center text-lg text-gray-500 dark:text-gray-400 md:max-w-2xl md:text-xl lg:text-2xl sm:mt-10">
+            <p className="max-w-xl mx-auto mt-6 text-center text-lg md:max-w-2xl md:text-xl lg:text-2xl sm:mt-10">
               A lost student interested in coding, photographing and video editing.
               Scroll down to learn more about me
             </p>
@@ -120,10 +122,10 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
             </div>
           </div>
         </section>
-        <section className="home-bg">
+        <section className={styles.homebg}>
           <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
             <div className="text-center">
-              <h2 className="text-4xl font-semibold tracking-tight text-gray-800 dark:text-neutral md:text-5xl">
+              <h2 className="text-4xl font-semibold tracking-tightmd:text-5xl">
               Education Background
               </h2>
             </div>
