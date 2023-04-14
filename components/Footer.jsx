@@ -19,6 +19,7 @@ export default function Footer(){
             .then(res => {
                 res.json().then(bd => {
                     setNowPlayingData(bd)
+                    console.log(bd)
                 })
             })
     }, [])
@@ -44,7 +45,7 @@ export default function Footer(){
                     <SpotifyIcon />
                     <div className="flex flex-col ml-1">
                         <span className="footer-title mb-0">Now Playing</span>
-                        <span className="text-md promptfont"><span className="font-bold">{nowPlaying.artist}</span> - {nowPlaying.title}</span>
+                        <a className="text-md promptfont hover:underline hover:text-blue-500 mt-[2px]" href={nowPlaying.song_url}><span className="font-bold">{nowPlaying.artist}</span> - {nowPlaying.title}</a>
                     </div>
                 </div>
             }

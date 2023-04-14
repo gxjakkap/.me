@@ -104,7 +104,7 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
                   I enjoy playing video games, programming and photographing.   
                   Programming has always piqued my curiosity. Particularly for web applications. 
                   I've worked on a variety of projects throughout the years. 
-                  Check it out {<Link href="/projects"><a className="underline">here</a></Link>}.
+                  Check it out {<Link href="/projects" className="underline">here</Link>}.
                 </p>
               </div>
               <div>

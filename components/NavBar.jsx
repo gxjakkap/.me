@@ -12,19 +12,19 @@ const NavList = ({isMobile}) => {
 
     const mobileNav = (
         <>
-            <li><Link href="/"><a>{Icons.home}Home</a></Link></li>
-            <li><Link href="/projects"><a>{Icons.projects}Projects</a></Link></li>
-            <li><Link href="/blog"><a>{Icons.blog}Blog</a></Link></li>
-            <li><Link href="/links"><a>{Icons.linktree}Links</a></Link></li>
+            <li><Link href="/">{Icons.home}Home</Link></li>
+            <li><Link href="/projects">{Icons.projects}Projects</Link></li>
+            <li><Link href="/blog">{Icons.blog}Blog</Link></li>
+            <li><Link href="/links">{Icons.linktree}Links</Link></li>
         </>
     )
 
     const desktopNav  = (
         <>
-            <li><Link href="/"><a>Home</a></Link></li>
-            <li><Link href="/projects"><a>Projects</a></Link></li>
-            <li><Link href="/blog"><a>Blog</a></Link></li>
-            <li><Link href="/links"><a>Links</a></Link></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/projects">Projects</Link></li>
+            <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/links">Links</Link></li>
         </>
     )
 
