@@ -1,3 +1,11 @@
 .dropdownIcons {
     @apply fill-current w-5 h-5
 }
+
+.centericon {
+    margin-right: calc((100vw * 142) / 375);
+
+    @media (min-width: 640px) {
+        margin-right: calc((100vw * 35) / 78);
+    }
+}

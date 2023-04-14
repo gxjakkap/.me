@@ -6,6 +6,7 @@ import EducationGrid from "../components/grid/Education"
 import TechStackGrid from "../components/grid/TechStack"
 import Head from "next/head"
 import Link from "next/link"
+import Image from "next/image"
 import { fetchJSON } from "../lib/json"
 import GetAge from "../lib/birthDay"
 import {join} from 'path'
@@ -56,15 +57,9 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
       </Head>
       <NavBar />
       <div className="w-full">
-        <section className={styles.homebg}>
-          <div className="w-full py-10 text-center sm:py-20 md:py-25 lg:py-5 mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl ">
-            <picture>
-              <img
-              src="https://avatars.githubusercontent.com/u/55027998"
-              alt="GuntxJakka's Portrait"
-              className="justify-center ml-auto mr-auto mb-5 rounded-full scale-80"
-              />
-            </picture>
+        <section className={`hero min-h-screen ${styles.homebg}`}>
+          {/* <div className="w-full py-10 text-center sm:py-20 md:py-25 lg:py-5 mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl ">
+            <Image src="https://avatars.githubusercontent.com/u/55027998" width={460} height={460} className="justify-center ml-auto mr-auto mb-5 rounded-full" alt="GuntxJakka's Portrait" />
             <h1 className="text-4xl text-center font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl">
               Hey, I'm <span className="text-primary"><Name /></span>
             </h1>
@@ -76,15 +71,27 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
               <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
               <button className="btn bg-gray-900 text-gray-50 border-0 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
               <button className="btn btn-secondary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
-              {/* <button className="btn bg-sky-800 btn-sm sm:btn-sm md:btn-md lg:btn-lg text-white"><Link href="/links">My Links</Link></button> */}
             </div>
-            {/* <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12 space-y-4 w-3/4 ml-auto mr-auto flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row">
-              <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
-              <button className="btn bg-gray-900 text-gray-50 border-0 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
-              <button className="btn btn-secondary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
-              <button className="btn bg-sky-800 btn-sm sm:btn-sm md:btn-md lg:btn-lg text-white"><Link href="/links">My Links</Link></button>
-            </div> */}
-          </div>
+           
+          </div> */}
+            <div className="hero-overlay bg-opacity-5"></div>
+            <div className="hero-content flex-col lg:flex-row">
+              <Image src="https://avatars.githubusercontent.com/u/55027998" width={460} height={460} className="max-w-sm rounded-lg shadow-2xl scale-75 lg:transform-none" alt="GuntxJakka's Portrait" />
+              <div className="ml-5">
+                <h1 className="text-4xl font-bold text-center lg:text-left tracking-tight text-neutral sm:text-5xl md:text-6xl">
+                  Hey, I'm <span className="text-primary"><Name /></span>
+                </h1>
+                <p className="py-6 text-lg">
+                  A lost student interested in coding, photographing and video editing.
+                  Scroll down to learn more about me
+                </p>
+                <div className="flex justify-center lg:justify-start space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
+                  <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
+                  <button className="btn bg-gray-900 text-gray-50 border-0 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
+                  <button className="btn btn-secondary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
+                </div>
+              </div>
+            </div>
         </section>
         <section className="even:bg-primary">
           <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
