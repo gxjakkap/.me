@@ -1,7 +1,8 @@
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
-import { renderMd } from '../../lib/md'
+import overrideOptions from "../../lib/contentfulRendererOverride"
 import { getPostData } from "../../lib/contentful"
+import RichText from '@madebyconnor/rich-text-to-jsx'
 import Head from 'next/head'
 
 export async function getServerSideProps({req, res, params}){
@@ -19,16 +20,10 @@ export async function getServerSideProps({req, res, params}){
         }
     }
 
-    const htmlArr = await Promise.all(postData.content.map(async (c) => {
-        const htmlc = await renderMd(c.content[0].value)
-        console.log(htmlc)
-        return htmlc
-    }))
-    
     return {
         props: {
             frontMatter: postData.frontMatter,
-            content: htmlArr,
+            content: postData.content,
             readTime: postData.readTime
         }
     }
@@ -44,9 +39,6 @@ function BadgeGroup({tagsArray}){
     )
 }
 
-
-
-
 export default function BlogPage({frontMatter, content, readTime}){
     const localeDateString = (date) => {
         let epdate = new Date(date)
@@ -58,6 +50,7 @@ export default function BlogPage({frontMatter, content, readTime}){
     }
     const postDate = new Date(frontMatter.date)
     const postDateString = localeDateString(postDate)
+
     return (
         <main>
             <Head>
@@ -81,33 +74,25 @@ export default function BlogPage({frontMatter, content, readTime}){
             </Head>
             <NavBar />
             <div className="w-full">
-                <article className="max-w-screen-md px-4 py-6 mx-auto sm:px-6 lg:px-8 sm:py-10 md:py-16 lg:py-18">
+                <div className="max-w-screen-md px-4 py-6 mx-auto sm:px-6 lg:px-8 sm:py-10 md:py-16 lg:py-18">
                     <div className="mb-10">
                         <div className="ml-auto mr-auto">
-                            <h1 className="text-5xl sm:text-3xl md:text-5xl lg:text-5xl text-center mb-2 ">{frontMatter.title}</h1>
+                            <h1 className="text-5xl sm:text-3xl md:text-5xl lg:text-5xl text-center mb-2 bold">{frontMatter.title}</h1>
                             <h3 className="text-lg sm:text-lg md:text-xl lg:text-xl text-center mt-5">{postDateString}</h3>
                             <h3 className="text-base sm:text-base md:text-base lg:text-base text-center mb-5">{readTime}</h3>
                         </div>
                         <BadgeGroup className="text-center" tagsArray={frontMatter.tags} />
                         <picture><img className="rounded-xl scale-80 content-center ml-auto mr-auto" src={frontMatter.socialImage} alt="Blog Thumbnail"/></picture>
                     </div>
-                    {content.map((paragraphcontent, k) => (
-                        <>
-                            <div className="text-neutral" key={k} dangerouslySetInnerHTML={{__html: paragraphcontent}}/>
-                            <br />
-                        </>
-                        
-                    ))}
-                </article>
+                    <article className="text-base-content lg:mt-20">
+                        <RichText 
+                            richText={content} 
+                            overrides={overrideOptions}
+                        />
+                    </article>
+                </div>
             </div>
             <Footer />
-            <style jsx>
-                {`
-                    a {
-                        @apply underline
-                    }
-                `}
-            </style>
         </main>
     )
 }

@@ -1,48 +1,11 @@
-/* import path, { join } from 'path' */
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
 import GitHubIconForButton from '../../components/svgs/githubforbutton'
 import { TechStackGridForProjectPage } from '../../components/grid/TechStack'
-/* import { fetchJSON } from '../../lib/json' */
 import { getProjectData } from '../../lib/contentful'
-import { renderMd } from '../../lib/md'
+import overrideOptions from "../../lib/contentfulRendererOverride"
+import RichText from '@madebyconnor/rich-text-to-jsx'
 import Head from 'next/head'
-
-/* const DataPath = join(process.cwd(), 'data') */
-
-/* export const getStaticPaths = async() => {
-    const paths = []
-    const data = await fetchJSON(join(DataPath, 'projects.json'))
-    data.forEach(element => {
-        paths.push({params: {slug: element.slug}})
-    });
-    return {
-        paths,
-        fallback: false
-    }
-
-} */
-
-/* export const getStaticProps = async({params}) => {
-    const projectsDataArray = await fetchJSON(join(DataPath, 'projects.json'))
-    const projectData = projectsDataArray.find(obj => obj.slug === params.slug)
-    return {
-        props: {
-            frontMatter: {
-                title: projectData.title,
-                metaTitle: projectData.metatitle,
-                metaDesc: projectData.metaDesc,
-                socialImage: projectData.socialImage,
-                thumbnail: projectData.thumbnail,
-                githubLink: projectData.githubLink,
-                projectLink: projectData.projectLink,
-                tags: projectData.tags,
-            },
-            content: projectData.content,
-            stack: projectData.stack
-        }
-    }
-} */
 
 export const getServerSideProps = async ({req, res, params}) => {
     const slug = params.slug
@@ -61,12 +24,6 @@ export const getServerSideProps = async ({req, res, params}) => {
 
     const projectData = data.data
 
-    const htmlArr = await Promise.all(projectData.content.map(async (c) => {
-        const htmlc = await renderMd(c.content[0].value)
-        console.log(htmlc)
-        return htmlc
-    }))
-
     return {
         props: {
             frontMatter: {
@@ -79,7 +36,7 @@ export const getServerSideProps = async ({req, res, params}) => {
                 projectLink: projectData.projectLink,
                 tags: projectData.tags,
             },
-            content: htmlArr,
+            content: projectData.content,
             stack: projectData.stack
         }
     }
@@ -173,24 +130,16 @@ export default function BlogPage({frontMatter, content, stack}){
                         <picture><img className="scale-80 content-center ml-auto mr-auto" src={frontMatter.thumbnail} alt="Project Thumbnail"/></picture>
                         <ButtonGroup frontMatter={frontMatter}/>
                     </div>
-                    {content.map((paragraphcontent, k) => (
-                        <>
-                            <div className="text-neutral text-lg" key={k} dangerouslySetInnerHTML={{__html: paragraphcontent}}/>
-                            <br />
-                        </>
-                        
-                    ))}
+                    <div className="text-lg">
+                        <RichText 
+                            richText={content} 
+                            overrides={overrideOptions}
+                        />
+                    </div>
                     <TechStackGrid stack={stack} />
                 </article>
             </div>
             <Footer />
-            <style jsx>
-                {`
-                    a {
-                        @apply underline
-                    }
-                `}
-            </style>
         </main>
     )
 }
