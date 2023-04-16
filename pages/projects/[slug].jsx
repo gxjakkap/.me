@@ -51,7 +51,7 @@ function TechStackGrid({stack}){
     if (stack){
         return (
             <div className="w-full">
-                <h2 className="text-3xl sm:text-2xl md:text-3xl text-center mt-10">Tech Stack</h2>
+                <h2 className="mt-10 text-center text-3xl sm:text-2xl md:text-3xl">Tech Stack</h2>
                 <TechStackGridForProjectPage techStackDataArray={stack} />
             </div>
         )
@@ -62,23 +62,23 @@ function TechStackGrid({stack}){
 function ButtonGroup({frontMatter}){
     if (frontMatter.projectLink && frontMatter.githubLink){
         return (
-            <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
-                <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.projectLink)}>Check it out here!</button>
-                <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.githubLink)}><GitHubIconForButton />GitHub</button>
+            <div className="mt-8 flex justify-center space-x-4 sm:mt-12 sm:space-x-4 md:space-x-6 lg:space-x-6">
+                <button className="btn-primary btn-sm btn sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.projectLink)}>Check it out here!</button>
+                <button className="btn-sm btn bg-gray-900 text-gray-50  sm:btn-sm md:btn-md lg:btn-lg hover:bg-gray-800" onClick={() => openInNewTab(frontMatter.githubLink)}><GitHubIconForButton />GitHub</button>
             </div>
         )
     }
     else if (frontMatter.projectLink) {
             return (
-                <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
-                    <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.projectLink)}>Check it out here!</button>
+                <div className="mt-8 flex justify-center space-x-4 sm:mt-12 sm:space-x-4 md:space-x-6 lg:space-x-6">
+                    <button className="btn-primary btn-sm btn sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.projectLink)}>Check it out here!</button>
                 </div>
             )
         }
     else if (frontMatter.githubLink){
         return (
-            <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
-                <button className="btn bg-gray-900 text-gray-50 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab(frontMatter.githubLink)}><GitHubIconForButton />GitHub</button>
+            <div className="mt-8 flex justify-center space-x-4 sm:mt-12 sm:space-x-4 md:space-x-6 lg:space-x-6">
+                <button className="btn-sm btn bg-gray-900 text-gray-50  sm:btn-sm md:btn-md lg:btn-lg hover:bg-gray-800" onClick={() => openInNewTab(frontMatter.githubLink)}><GitHubIconForButton />GitHub</button>
             </div>
         )
     }
@@ -89,9 +89,9 @@ function ButtonGroup({frontMatter}){
 
 function BadgeGroup({tagsArray}){
     return (
-        <div className="text-center h-7 mb-3">
+        <div className="mb-3 h-7 text-center">
             {tagsArray.map(tag => (
-                <div key={tag} className="badge badge-primary justify-center mx-1 h-5">{tag}</div>
+                <div key={tag} className="badge-primary badge mx-1 h-5 justify-center">{tag}</div>
             ))}
         </div>
     )
@@ -122,12 +122,12 @@ export default function BlogPage({frontMatter, content, stack}){
             </Head>
             <NavBar />
             <div className="w-full">
-                <article className="max-w-screen-md px-4 py-6 mx-auto sm:px-6 lg:px-8 sm:py-10 md:py-16 lg:py-20">
+                <article className="mx-auto max-w-screen-md px-4 py-6 sm:px-6 sm:py-10 md:py-16 lg:px-8 lg:py-20">
                     <div className="mb-10">
-                        <h1 className="text-5xl sm:text-3xl md:text-5xl lg:text-5xl text-center mb-2">{frontMatter.title}</h1>
-                        <h3 className="text-lg sm:text-lg md:text-xl lg:text-xl text-center py-5">{frontMatter.metaDesc}</h3>
+                        <h1 className="mb-2 text-center text-5xl sm:text-3xl md:text-5xl lg:text-5xl">{frontMatter.title}</h1>
+                        <h3 className="py-5 text-center text-lg sm:text-lg md:text-xl lg:text-xl">{frontMatter.metaDesc}</h3>
                         <BadgeGroup className="text-center" tagsArray={frontMatter.tags} />
-                        <picture><img className="scale-80 content-center ml-auto mr-auto" src={frontMatter.thumbnail} alt="Project Thumbnail"/></picture>
+                        <picture><img className="mx-auto content-center" src={frontMatter.thumbnail} alt="Project Thumbnail"/></picture>
                         <ButtonGroup frontMatter={frontMatter}/>
                     </div>
                     <div className="text-lg">

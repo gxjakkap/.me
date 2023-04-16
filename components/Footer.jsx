@@ -22,11 +22,11 @@ export default function Footer(){
                     console.log(bd)
                 })
             })
-    }, [])
+    }, [nowPlaying])
     return (
         <footer className="footer bg-gray-800 p-10 text-slate-200">
             <div>
-            <picture><img className="w-[2.6rem] h-[2.6rem]" alt="GuntxJakka's logo" src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png"/></picture>
+            <picture><img className="h-[2.6rem] w-[2.6rem]" alt="GuntxJakka's logo" src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png"/></picture>
                 <p>© 2022{getYear()}- GuntxJakka</p>
             </div> 
             <div>
@@ -41,11 +41,11 @@ export default function Footer(){
                 </div>
             </div>
             {(nowPlaying && nowPlaying.artist !== "") && 
-                <div className="flex mt-5 items-center">
+                <div className="mt-5 flex items-center">
                     <SpotifyIcon />
-                    <div className="flex flex-col ml-1">
+                    <div className="ml-1 flex flex-col">
                         <span className="footer-title mb-0">Now Playing</span>
-                        <a className="text-md promptfont hover:underline hover:text-blue-500 mt-[2px] tooltip tooltip-bottom tooltip-primary" data-tip="Click to play on Spotify" href={nowPlaying.song_url} target="_blank" rel="noreferrer"><span className="font-bold">{nowPlaying.artist}</span> - {nowPlaying.title}</a>
+                        <a className="promptfont tooltip tooltip-bottom tooltip-primary mt-[2px] text-base hover:text-blue-500 hover:underline" data-tip="Click to play on Spotify" href={nowPlaying.song_url} target="_blank" rel="noreferrer"><span className="font-bold">{nowPlaying.artist}</span> - {nowPlaying.title}</a>
                     </div>
                 </div>
             }

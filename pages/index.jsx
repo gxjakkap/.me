@@ -13,6 +13,7 @@ import {join} from 'path'
 
 import styles from "../styles/Index.module.css"
 
+
 const DataPath = join(process.cwd(), 'data')
 
 export async function getStaticProps() {
@@ -58,49 +59,34 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
       <NavBar />
       <div className="w-full">
         <section className={`hero min-h-screen ${styles.homebg}`}>
-          {/* <div className="w-full py-10 text-center sm:py-20 md:py-25 lg:py-5 mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl ">
-            <Image src="https://avatars.githubusercontent.com/u/55027998" width={460} height={460} className="justify-center ml-auto mr-auto mb-5 rounded-full" alt="GuntxJakka's Portrait" />
-            <h1 className="text-4xl text-center font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl">
-              Hey, I'm <span className="text-primary"><Name /></span>
-            </h1>
-            <p className="max-w-xl mx-auto mt-6 text-center text-lg md:max-w-2xl md:text-xl lg:text-2xl sm:mt-10">
-              A lost student interested in coding, photographing and video editing.
-              Scroll down to learn more about me
-            </p>
-            <div className="flex justify-center mt-8 space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
-              <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
-              <button className="btn bg-gray-900 text-gray-50 border-0 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
-              <button className="btn btn-secondary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
-            </div>
-           
-          </div> */}
+            {/* eslint-disable-next-line tailwindcss/migration-from-tailwind-2*/}
             <div className="hero-overlay bg-opacity-5"></div>
             <div className="hero-content flex-col lg:flex-row">
-              <Image src="https://avatars.githubusercontent.com/u/55027998" width={460} height={460} className="max-w-sm rounded-lg shadow-2xl scale-75 lg:transform-none" alt="GuntxJakka's Portrait" />
+              <Image src="https://avatars.githubusercontent.com/u/55027998" width={460} height={460} className="max-w-sm scale-75 rounded-lg shadow-2xl lg:transform-none" alt="GuntxJakka's Portrait" />
               <div className="ml-5">
-                <h1 className="text-4xl font-bold text-center lg:text-left tracking-tight text-neutral sm:text-5xl md:text-6xl">
+                <h1 className="text-center text-4xl font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl lg:text-left">
                   Hey, I'm <span className="text-primary"><Name /></span>
                 </h1>
                 <p className="py-6 text-lg">
                   A lost student interested in coding, photographing and video editing.
                   Scroll down to learn more about me
                 </p>
-                <div className="flex justify-center lg:justify-start space-x-4 sm:space-x-4 md:space-x-6 lg:space-x-6 sm:mt-12">
-                  <button className="btn btn-primary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
-                  <button className="btn bg-gray-900 text-gray-50 border-0 hover:bg-gray-800  btn-sm sm:btn-sm md:btn-md lg:btn-lg" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
-                  <button className="btn btn-secondary btn-sm sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
+                <div className="flex justify-center space-x-4 sm:mt-12 sm:space-x-4 md:space-x-6 lg:justify-start lg:space-x-6">
+                  <button className="btn-primary btn-sm btn sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
+                  <button className="btn-sm btn border-0 bg-gray-900 text-gray-50  sm:btn-sm md:btn-md lg:btn-lg hover:bg-gray-800" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
+                  <button className="btn-secondary btn-sm btn sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
                 </div>
               </div>
             </div>
         </section>
-        <section className="even:bg-primary">
-          <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
+        <section className=" even:bg-primary">
+          <div className="mx-auto w-full max-w-screen-lg px-4 py-14 sm:py-20 md:py-28 lg:py-32 xl:max-w-screen-xl">
             <div className="text-center">
               <h2 className="text-4xl font-semibold tracking-tight text-gray-50 md:text-5xl">
                 About Me.
               </h2>
             </div>
-            <div className="grid gap-6 mt-10 text-lg text-gray-100 md:text-xl sm:mt-12 md:mt-16 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mt-10 grid gap-6 text-lg text-gray-100 sm:mt-12 sm:grid-cols-2 md:mt-16 md:grid-cols-3 md:text-xl">
               <div>
                 <p className="leading-relaxed">
                   Hey, I'm Jakkaphat "Gunt" Chalermphanaphan. A
@@ -129,10 +115,10 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
             </div>
           </div>
         </section>
-        <section className={styles.homebg}>
-          <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
+        <section className={` ${styles.homebg}`}>
+          <div className="mx-auto w-full max-w-screen-lg px-4 py-14 sm:py-20 md:py-28 lg:py-32 xl:max-w-screen-xl">
             <div className="text-center">
-              <h2 className="text-4xl font-semibold tracking-tightmd:text-5xl">
+              <h2 className="tracking-tightmd:text-5xl text-4xl font-semibold">
               Education Background
               </h2>
             </div>
@@ -140,7 +126,7 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
           </div>
         </section>
         <section className="even:bg-primary">
-          <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
+          <div className="mx-auto w-full max-w-screen-lg px-4 py-14 sm:py-20 md:py-28 lg:py-32 xl:max-w-screen-xl">
             <div className="text-center">
                 <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
                   My Tech Stack

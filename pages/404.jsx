@@ -7,7 +7,7 @@ import { useRouter } from "next/router"
 const NotFound = () => {
     const router = useRouter()
     return (
-        <main className="w-full flex flex-col h-screen">
+        <main className="flex h-screen w-full flex-col">
             <Head>
                 <title>Not Found - GuntxJakka</title>
                 <meta charSet="UTF-8"/>
@@ -24,10 +24,10 @@ const NotFound = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content text-center">
                     <div className="max-w-md">
-                    <h1 className="text-5xl font-bold mb-6">404</h1>
-                    <Image src={'https://res.cloudinary.com/dynrld3nm/image/upload/v1666128740/guntxjakka.me/404_fdi8fx.jpg'} width="200" height="200" alt="404 cat meme"/>
+                    <h1 className="mb-6 text-5xl font-bold">404</h1>
+                    <Image src={'https://res.cloudinary.com/dynrld3nm/image/upload/v1666128740/guntxjakka.me/404_fdi8fx.jpg'} width="300" height="300" alt="404 cat meme"/>
                     <p className="py-6 text-xl">This page does not exist...</p>
-                    <button className="btn btn-primary" onClick={() => {router.push('/')}}>Go back to homepage</button>
+                    <button className="btn-primary btn" onClick={() => {router.push('/')}}>Go back to homepage</button>
                     </div>
                 </div>
             </div>

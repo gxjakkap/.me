@@ -1,21 +1,9 @@
 import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
-/* import { join } from 'path' */
 import { getAllProjects } from "../../lib/contentful"
 import Head from "next/head"
 import Link from "next/link"
-/* import { fetchJSON } from "../../lib/json" */
 
-/* const DataPath = join(process.cwd(), 'data')
-
-export async function getStaticProps() {
-    const dataArray = await fetchJSON(join(DataPath, 'projects.json'))
-    return {
-        props: {
-            dataArray: dataArray,
-        }
-    }
-} */
 
 export const getServerSideProps = async () => {
     const dataArray = await getAllProjects()
@@ -30,7 +18,7 @@ const BadgeGroup = ({tagsArray}) => {
     return (
         <div className="mb-5">
             {tagsArray.map(tag => (
-                <div key={tag} className="badge badge-primary justify-center mx-1 h-5">{tag}</div>
+                <div key={tag} className="badge-primary badge mx-1 h-5 justify-center">{tag}</div>
             ))}
         </div>
     )
@@ -46,8 +34,8 @@ const ProjectGridElement = ({dataArray}) => {
                         <h2 className="card-title">{data.title}</h2>
                         <p>{data.description}</p>
                         <BadgeGroup className="mb-2" tagsArray={data.tags}/>
-                        <div className="card-actions justify-end mt-2"> 
-                            <Link href={`/projects/${data.slug}`}><button className={"btn btn-primary"}>Check it out</button></Link>
+                        <div className="card-actions mt-2 justify-end"> 
+                            <Link href={`/projects/${data.slug}`}><button className={"btn-primary btn"}>Check it out</button></Link>
                         </div>
                     </div>
                 </div>
@@ -81,7 +69,7 @@ export default function ProjectHome({dataArray}){
             </Head>
             <NavBar />
             <div className="w-full">
-                <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
+                <div className="mx-auto w-full max-w-screen-lg px-4 py-14 sm:py-20 md:py-28 lg:py-32 xl:max-w-screen-xl">
                     <div className="text-center">
                         <h2 className="text-4xl font-semibold tracking-tight text-neutral md:text-5xl">
                             My Projects

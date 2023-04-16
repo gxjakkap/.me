@@ -17,7 +17,7 @@ const BadgeGroup = ({tagsArray}) => {
     return (
         <div className="mb-5">
             {tagsArray.map(tag => (
-                <div key={tag} className="badge badge-primary justify-center mx-1 h-5">{tag}</div>
+                <div key={tag} className="badge-primary badge  mx-1 h-5 justify-center">{tag}</div>
             ))}
         </div>
     )
@@ -34,7 +34,7 @@ const BlogGridElement = ({dataArray}) => {
                         <p>{data.metaDesc}</p>
                         <BadgeGroup tagsArray={data.tags}/>
                         <div className="card-actions justify-end"> 
-                            <Link href={`/blog/${data.slug}`}><button className={"btn btn-primary"}>Read</button></Link>
+                            <Link href={`/blog/${data.slug}`}><button className={"btn-primary btn"}>Read</button></Link>
                         </div>
                     </div>
               </div>
@@ -68,7 +68,7 @@ export default function BlogHome({dataArray}){
             </Head>
             <NavBar />
             <div className="w-full">
-                <div className="w-full mx-auto px-4 max-w-screen-lg xl:max-w-screen-xl py-14 sm:py-20 md:py-28 lg:py-32">
+                <div className="mx-auto w-full max-w-screen-lg px-4 py-14 sm:py-20 md:py-28 lg:py-32 xl:max-w-screen-xl">
                     <div className="text-center">
                         <h2 className="text-4xl font-semibold tracking-tight text-neutral md:text-5xl">
                             My Blog

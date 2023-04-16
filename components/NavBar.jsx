@@ -37,18 +37,18 @@ export default function NavBar(){
         <div className="navbar bg-gray-800 text-slate-100">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <label tabIndex="0" className="btn btn-ghost lg:hidden">
+                    <label tabIndex="0" className="btn-ghost btn lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex="0" className="menu menu-normal dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-gray-800 dark:text-neutral">
+                    <ul tabIndex="0" className="dropdown-content menu rounded-box menu-normal mt-3 w-52 bg-base-100 p-2 text-gray-800 shadow dark:text-neutral">
                         <NavList isMobile={true} />
                         <DarkModeButton />
                     </ul>
                 </div>
-                <button className="btn btn-ghost normal-case text-xl hidden lg:block"><Link href="/"><Image src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png" width={44} height={44} /></Link></button>
+                <button className="btn-ghost btn hidden text-xl normal-case lg:block"><Link href="/"><Image src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png" width={44} height={44} alt="GuntxJakka's logo"/></Link></button>
             </div>
             <div className="navbar-center">
-                <button className={`btn btn-ghost normal-case text-xl lg:hidden ${styles.centericon} sm:${styles.centericon} `}><Link href="/"><Image src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png" width={44} height={44} /></Link></button>
+                <button className={`btn-ghost btn text-xl normal-case lg:hidden ${styles.centericon} sm:${styles.centericon} `}><Link href="/"><Image src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png" width={44} height={44} alt="GuntxJakka's logo" /></Link></button>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
