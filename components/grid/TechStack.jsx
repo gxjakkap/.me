@@ -1,4 +1,5 @@
-export default function TechStackGrid({techStackDataArray}){
+export default function TechStackGrid({techStackDataArray, theme}){
+    console.log(theme)
     return (
       <div className="mt-10 grid grid-cols-2 gap-6 sm:mt-12 sm:grid-cols-3 md:mt-16 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6">
         {techStackDataArray.map(techData => (
@@ -8,7 +9,7 @@ export default function TechStackGrid({techStackDataArray}){
             </div>
             <figure className="px-2 pb-5 pt-2">
               <picture>
-                <img src={techData.image} alt={`${techData.name}'s icon`} className="mx-auto h-16 w-16 rounded-xl" />
+                <img src={(theme == "dark") ? (techData.image_dark || techData.image) : techData.image} alt={`${techData.name}'s icon`} className="mx-auto h-16 w-16 rounded-xl" />
               </picture>
             </figure>
           </div>

@@ -7,6 +7,7 @@ import TechStackGrid from "../components/grid/TechStack"
 import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
+import { useTheme } from 'next-themes'
 import { fetchJSON } from "../lib/json"
 import GetAge from "../lib/birthDay"
 import {join} from 'path'
@@ -35,6 +36,7 @@ function openInNewTab(url){
 
 
 export default function Home ({ educationDataArray, techStackDataArray}) {
+  const { theme, setTheme } = useTheme()
   return (
     <main>
       <Head>
@@ -132,7 +134,7 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
                   My Tech Stack
                 </h2>
             </div>
-            <TechStackGrid techStackDataArray={techStackDataArray} />
+            <TechStackGrid techStackDataArray={techStackDataArray} theme={theme} />
           </div>
         </section>
       </div>

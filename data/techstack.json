@@ -29,6 +29,7 @@
     },
     {
         "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913689/guntxjakka.me/techstack/nextjs_ccv4nb.svg",
+        "image_dark": "https://res.cloudinary.com/dynrld3nm/image/upload/v1681651236/guntxjakka.me/techstack/dark_nextjs_dwpsig.svg",
         "name": "Next.js"
     },
     {
@@ -53,6 +54,7 @@
     },
     {
       "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913544/guntxjakka.me/techstack/express_qoip3w.svg",
+      "image_dark": "https://res.cloudinary.com/dynrld3nm/image/upload/v1681651400/guntxjakka.me/techstack/dark_express_z7slbv.svg",
       "name": "Express.js"
     },
     {
@@ -73,6 +75,7 @@
     },
     {
       "image": "https://res.cloudinary.com/dynrld3nm/image/upload/v1657913543/guntxjakka.me/techstack/vercel_v5md5f.svg",
+      "image_dark": "https://res.cloudinary.com/dynrld3nm/image/upload/v1681651491/guntxjakka.me/techstdddddddddack/dark_vercel_qtpias.svg",
       "name": "Vercel"
     },
     {
