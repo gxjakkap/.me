@@ -57,6 +57,7 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
         <meta name="twitter:description" content="A lost student interested in coding, photographing and video editing." />
         <meta name="twitter:site" content="@GuntxJakka" />
         <meta name="twitter:image" content="https://res.cloudinary.com/dynrld3nm/image/upload/v1657876472/guntxjakka.me/website_thumb.webp" />
+        <link href="https://mastodon.social/@jakka" rel="me" />
       </Head>
       <NavBar />
       <div className="w-full">

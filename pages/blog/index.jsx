@@ -2,6 +2,7 @@ import NavBar from "../../components/NavBar"
 import Footer from "../../components/Footer"
 import { getAllBlogInfo } from "../../lib/contentful"
 import Head from "next/head"
+import Image from "next/image"
 import Link from "next/link"
 
 export async function getServerSideProps(context) {
@@ -27,17 +28,17 @@ const BlogGridElement = ({dataArray}) => {
     return (
         <div className="grid-container">
             {dataArray.map(data => (
-                <div key={data.slug} className="card w-96 bg-base-100 shadow-xl">
-                    <figure><picture><img src={data.socialImage} className="object-contain" alt="Thumbnail" /></picture></figure>
-                    <div className="card-body">
-                        <h2 className="card-title">{data.title}</h2>
-                        <p>{data.metaDesc}</p>
-                        <BadgeGroup tagsArray={data.tags}/>
-                        <div className="card-actions justify-end"> 
-                            <Link href={`/blog/${data.slug}`}><button className={"btn-primary btn"}>Read</button></Link>
+                <Link key={data.slug} href={`/blog/${data.slug}`}>
+                    <div className="card w-96 bg-base-100 shadow-xl">                        
+                        <Image src={data.socialImage} width={384} height={216} alt={`${data.title}'s Thumbnail`} className="rounded-t-xl object-contain " />
+                        <div className="card-body">
+                            <h2 className="card-title">{data.title}</h2>
+                            <p>{data.metaDesc}</p>
+                            <BadgeGroup tagsArray={data.tags}/>
                         </div>
                     </div>
-              </div>
+                </Link>
+                
             ))}
     </div>
     )

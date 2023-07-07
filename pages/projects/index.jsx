@@ -3,6 +3,7 @@ import Footer from "../../components/Footer"
 import { getAllProjects } from "../../lib/contentful"
 import Head from "next/head"
 import Link from "next/link"
+import Image from "next/image"
 
 
 export const getServerSideProps = async () => {
@@ -28,22 +29,21 @@ const ProjectGridElement = ({dataArray}) => {
     return (
         <div className="grid-container">
             {dataArray.map(data => (
-                <div key={data.slug} className="card w-96 bg-base-100 shadow-xl">
-                    <figure><picture><img src={data.thumbnail} className="object-contain" alt="Thumbnail" /></picture></figure>
-                    <div className="card-body">
-                        <h2 className="card-title">{data.title}</h2>
-                        <p>{data.description}</p>
-                        <BadgeGroup className="mb-2" tagsArray={data.tags}/>
-                        <div className="card-actions mt-2 justify-end"> 
-                            <Link href={`/projects/${data.slug}`}><button className={"btn-primary btn"}>Check it out</button></Link>
+                <Link key={data.slug} href={`/projects/${data.slug}`}>
+                    <div className="card w-96 bg-base-100 shadow-xl">                        
+                        <Image src={data.thumbnail} width={384} height={216} alt={`${data.title}'s Thumbnail`} className="rounded-t-xl object-contain " />
+                        <div className="card-body">
+                            <h2 className="card-title">{data.title}</h2>
+                            <p>{data.description}</p>
+                            <BadgeGroup tagsArray={data.tags}/>
                         </div>
                     </div>
-                </div>
+                </Link>
+                
             ))}
     </div>
     )
 }
-
 
 export default function ProjectHome({dataArray}){
     return (

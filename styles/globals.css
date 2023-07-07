@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Prompt&family=Inter&family=Kanit&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,4 +14,8 @@
 
 .promptfont {
     font-family: 'Prompt', sans-serif;
+}
+
+* {
+    font-family: 'Inter', 'Prompt', sans-serif;
 }
