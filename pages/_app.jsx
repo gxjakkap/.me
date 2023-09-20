@@ -13,14 +13,14 @@ function App({ Component, pageProps }) {
   useEffect(() => {
     const handleChangeStart = (url) => {
       if (!url) return
-      if (url.includes('/blog') || url.includes('/projects')){
+      if (url.includes('/blog') || url.includes('/projects') || url.includes('/latestblog')){
         setIsLoading(true)
       }
     }
 
     const handleChangeEnd= (url) => {
       if (!url) return
-      if (url.includes('/blog') || url.includes('/projects')){
+      if (url.includes('/blog') || url.includes('/projects') || url.includes('/latestblog')){
         setIsLoading(false)
       }
     }

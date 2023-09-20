@@ -10,7 +10,7 @@ import Image from "next/image"
 import { useTheme } from 'next-themes'
 import { fetchJSON } from "../lib/json"
 import GetAge from "../lib/birthDay"
-import {join} from 'path'
+import { join } from 'path'
 
 import styles from "../styles/Index.module.css"
 
@@ -77,7 +77,7 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
                 <div className="flex justify-center space-x-4 sm:mt-12 sm:space-x-4 md:space-x-6 lg:justify-start lg:space-x-6">
                   <button className="btn-primary btn-sm btn sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
                   <button className="btn-sm btn border-0 bg-gray-900 text-gray-50  sm:btn-sm md:btn-md lg:btn-lg hover:bg-gray-800" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
-                  <button className="btn-secondary btn-sm btn sm:btn-sm md:btn-md lg:btn-lg"><Link href="/blog">My Blog</Link></button>
+                  <button className="btn-secondary btn-sm btn sm:btn-sm md:btn-md lg:btn-lg"><Link href="/latestblog">Latest Blog</Link></button>
                 </div>
               </div>
             </div>
