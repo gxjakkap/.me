@@ -11,7 +11,7 @@ export default function Footer(){
     const [nowPlaying, setNowPlayingData] = useState(null)
     useEffect(() => {
         if (nowPlaying) return
-        let apiOrigin = "https://www.guntxjakka.me"
+        let apiOrigin = "https://guntxjakka.me"
         if (process.env.NODE_ENV == "development"){
             apiOrigin = "http://localhost:3000"
         }
