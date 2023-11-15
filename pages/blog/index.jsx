@@ -5,7 +5,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
-import { runtimeConfig } from "../../runtimeConfig"
+import { runtimeConfig } from "../../lib/runtimeConfig"
 
 export const config = runtimeConfig
 

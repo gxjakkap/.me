@@ -1,6 +1,6 @@
 import { getLatestBlog } from "../lib/contentful"
 
-import { runtimeConfig } from "../runtimeConfig"
+import { runtimeConfig } from "../lib/runtimeConfig"
 
 export const config = runtimeConfig
 

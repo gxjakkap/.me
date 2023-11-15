@@ -5,7 +5,7 @@ import { getPostData } from "../../lib/contentful"
 import RichText from '@madebyconnor/rich-text-to-jsx'
 import Head from 'next/head'
 
-import { runtimeConfig } from "../../runtimeConfig"
+import { runtimeConfig } from "../../lib/runtimeConfig"
 
 export const config = runtimeConfig
 
