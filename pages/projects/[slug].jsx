@@ -7,6 +7,10 @@ import overrideOptions from "../../lib/contentfulRendererOverride"
 import RichText from '@madebyconnor/rich-text-to-jsx'
 import Head from 'next/head'
 
+export const config = {
+    runtime: "edge"
+}
+
 export const getServerSideProps = async ({req, res, params}) => {
     const slug = params.slug
     const data = await getProjectData(slug)

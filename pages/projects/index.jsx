@@ -5,6 +5,9 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 
+export const config = {
+    runtime: "edge"
+}
 
 export const getServerSideProps = async () => {
     const dataArray = await getAllProjects()

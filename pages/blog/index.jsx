@@ -5,6 +5,10 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
+export const config = {
+    runtime: "edge"
+}
+
 export async function getServerSideProps(context) {
     const dataArray = await getAllBlogInfo()
     return {

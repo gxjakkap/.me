@@ -5,6 +5,10 @@ import { getPostData } from "../../lib/contentful"
 import RichText from '@madebyconnor/rich-text-to-jsx'
 import Head from 'next/head'
 
+export const config = {
+    runtime: "edge"
+}
+
 export async function getServerSideProps({req, res, params}){
     const slug = params.slug
     const postData = await getPostData(slug)
