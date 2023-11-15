@@ -5,9 +5,9 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
-import { runtimeConfig } from "../../lib/runtimeConfig"
-
-export const config = runtimeConfig
+export const config = {
+    runtime: "experimental-edge"
+}
 
 export async function getServerSideProps(context) {
     const dataArray = await getAllBlogInfo()

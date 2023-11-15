@@ -7,9 +7,9 @@ import overrideOptions from "../../lib/contentfulRendererOverride"
 import RichText from '@madebyconnor/rich-text-to-jsx'
 import Head from 'next/head'
 
-import { runtimeConfig } from "../../lib/runtimeConfig"
-
-export const config = runtimeConfig
+export const config = {
+    runtime: "experimental-edge"
+}
 
 export const getServerSideProps = async ({req, res, params}) => {
     const slug = params.slug
