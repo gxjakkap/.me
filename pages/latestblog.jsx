@@ -1,8 +1,8 @@
 import { getLatestBlog } from "../lib/contentful"
 
-export const config = {
-    runtime: "edge"
-}
+import { runtimeConfig } from "../../runtimeConfig"
+
+export const config = runtimeConfig
 
 export async function getServerSideProps(context) {
     const data = await getLatestBlog()
