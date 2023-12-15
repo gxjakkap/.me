@@ -1,9 +1,5 @@
 import { getLatestBlog } from "../lib/contentful"
 
-export const config = {
-    runtime: "experimental-edge"
-}
-
 export async function getServerSideProps(context) {
     const data = await getLatestBlog()
     return {
