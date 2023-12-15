@@ -36,24 +36,24 @@ function openInNewTab(url){
 
 
 export default function Home ({ educationDataArray, techStackDataArray}) {
-  const { theme, setTheme } = useTheme()
+  const { theme } = useTheme()
   return (
     <main>
       <Head>
-        <title>Home - GuntxJakka</title>
+        <title>GuntxJakka</title>
         <meta charSet="UTF-8"/>
         <meta name="description" content="Hi, My name is Gunt. I'm a student interested in overall programming and computer stuff. Currently located in Thailand." />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="keywords" content="guntxjakka, jakkaphat chalermphanaphan, jakkaphat, chalermphanaphan, gunt, gxjakkap"/>
         <meta name="author" content="Jakkaphat Chalermphanaphan"/>
-        <meta property="og:title" content="Home - GuntxJakka" />
+        <meta property="og:title" content="GuntxJakka" />
         <meta property="og:description" content="A lost student interested in coding, photographing and video editing." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://res.cloudinary.com/dynrld3nm/image/upload/v1657876472/guntxjakka.me/website_thumb.webp" />
         <meta property="og:site_name" content="GuntxJakka" />
         <meta property="og:description" content="A lost student interested in coding, photographing and video editing." />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Home - GuntxJakka" />
+        <meta name="twitter:title" content="GuntxJakka" />
         <meta name="twitter:description" content="A lost student interested in coding, photographing and video editing." />
         <meta name="twitter:site" content="@GuntxJakka" />
         <meta name="twitter:image" content="https://res.cloudinary.com/dynrld3nm/image/upload/v1657876472/guntxjakka.me/website_thumb.webp" />
