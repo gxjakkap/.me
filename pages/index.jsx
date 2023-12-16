@@ -65,9 +65,9 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
             {/* eslint-disable-next-line tailwindcss/migration-from-tailwind-2*/}
             <div className="hero-overlay bg-opacity-5"></div>
             <div className="hero-content flex-col lg:flex-row">
-              <Image src="https://avatars.githubusercontent.com/u/55027998" width={460} height={460} className="max-w-sm scale-75 rounded-lg shadow-2xl lg:transform-none" alt="GuntxJakka's Portrait" />
+              <Image src="https://avatars.githubusercontent.com/u/55027998" width={460} height={460} className="max-w-sm scale-75 mx-auto rounded-lg shadow-2xl lg:transform-none" alt="GuntxJakka's Portrait" />
               <div className="ml-5">
-                <h1 className="text-center text-4xl font-bold tracking-tight text-neutral sm:text-5xl md:text-6xl lg:text-left">
+                <h1 className="text-center text-4xl font-bold tracking-tight text-neutral mx-auto sm:text-5xl md:text-6xl lg:text-left">
                   Hey, I'm <span className="text-primary"><Name /></span>
                 </h1>
                 <p className="py-6 text-lg">
@@ -77,12 +77,12 @@ export default function Home ({ educationDataArray, techStackDataArray}) {
                 <div className="flex justify-center space-x-4 sm:mt-12 sm:space-x-4 md:space-x-6 lg:justify-start lg:space-x-6">
                   <button className="btn-primary btn-sm btn sm:btn-sm md:btn-md lg:btn-lg"><Link href="/projects">My Projects</Link></button>
                   <button className="btn-sm btn border-0 bg-gray-900 text-gray-50  sm:btn-sm md:btn-md lg:btn-lg hover:bg-gray-800" onClick={() => openInNewTab('https://github.com/gxjakkap')}><GitHubIconForButton />My GitHub</button>
-                  <button className="btn-secondary btn-sm btn sm:btn-sm md:btn-md lg:btn-lg"><Link href="/latestblog">Latest Blog</Link></button>
+                  <button className="btn-secondary hidden lg:block btn-sm btn sm:btn-sm md:btn-md lg:btn-lg"><Link href="/latestblog">Latest Blog</Link></button>
                 </div>
               </div>
             </div>
         </section>
-        <section className=" even:bg-primary">
+        <section className="even:bg-primary">
           <div className="mx-auto w-full max-w-screen-lg px-4 py-14 sm:py-20 md:py-28 lg:py-32 xl:max-w-screen-xl">
             <div className="text-center">
               <h2 className="text-4xl font-semibold tracking-tight text-gray-50 md:text-5xl">
