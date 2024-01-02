@@ -65,7 +65,7 @@ export default function Footer(){
                     <SpotifyIcon />
                     <div className="ml-1 flex flex-col">
                         <span className="footer-title mb-0">Now Playing</span>
-                        <a className="promptfont tooltip tooltip-bottom tooltip-primary mt-[2px] text-base hover:text-blue-500 hover:underline" data-tip="Click to play on Spotify" href={nowPlaying.song_url} target="_blank" rel="noreferrer"><span className="font-bold">{nowPlaying.artist}</span> - {nowPlaying.title}</a>
+                        <a className="tooltip tooltip-bottom tooltip-primary mt-[2px] text-base hover:text-blue-500 hover:underline" data-tip="Click to play on Spotify" href={nowPlaying.song_url} target="_blank" rel="noreferrer"><span className="font-bold">{nowPlaying.artist}</span> - {nowPlaying.title}</a>
                     </div>
                 </div>
             }
