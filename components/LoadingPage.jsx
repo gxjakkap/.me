@@ -5,7 +5,7 @@ const LoadingPage = () => {
     return (
         <main className="flex h-screen w-full flex-col">
             <NavBar />
-            <div className="flex min-h-screen items-center justify-center bg-base-200">
+            <div className="flex flex-col gap-y-2 min-h-screen items-center justify-center bg-base-200">
                 <TailSpin
                     height="100"
                     width="100"
@@ -14,6 +14,7 @@ const LoadingPage = () => {
                     radius="1"
                     visible={true}
                 />
+                <p className="text-center">Loading...</p>
             </div>
         </main>
     )
