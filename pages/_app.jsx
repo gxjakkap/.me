@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ThemeProvider } from 'next-themes'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import '../styles/globals.css'
 import LoadingPage from '../components/LoadingPage'
@@ -36,6 +37,7 @@ function App({ Component, pageProps }) {
       {isLoading ? 
         (<LoadingPage />) 
         : (<Component {...pageProps} />)}
+        <SpeedInsights />
     </ThemeProvider>
   )
 }

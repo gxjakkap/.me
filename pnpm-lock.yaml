@@ -14,6 +14,9 @@ dependencies:
   '@madebyconnor/rich-text-to-jsx':
     specifier: ^2.2.1
     version: 2.2.1(react@18.2.0)
+  '@vercel/speed-insights':
+    specifier: ^1.0.3
+    version: 1.0.3
   contentful:
     specifier: ^9.3.5
     version: 9.3.5
@@ -528,6 +531,11 @@ packages:
       '@typescript-eslint/types': 6.14.0
       eslint-visitor-keys: 3.4.3
     dev: true
+
+  /@vercel/speed-insights@1.0.3:
+    resolution: {integrity: sha512-bKIt0HDdF6hP2bJZyS+za3k6sKeAXNRLSIUbwVwvyvKdsHBWS6ILBvmD1wXHZZyTqjU1TP7dTE/F6lHM6rBdKA==}
+    requiresBuild: true
+    dev: false
 
   /acorn-jsx@5.3.2(acorn@8.7.1):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
