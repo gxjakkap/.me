@@ -19,7 +19,8 @@ export default function Footer(){
         if (nowPlaying) return
         let apiOrigin = "https://guntxjakka.me"
         if (process.env.NODE_ENV == "development"){
-            apiOrigin = "http://localhost:3000"
+            apiOrigin = window.location.origin
+            console.log(window.location.origin)
         }
         fetch(`${apiOrigin}/api/listeningto`)
             .then(res => {
@@ -47,7 +48,7 @@ export default function Footer(){
             <div>
             <picture><img className="h-[2.6rem] w-[2.6rem]" alt="GuntxJakka's logo" src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png"/></picture>
                 <p>© 2022{getYear()} Jakkaphat Ch.</p>
-                <p>Currently {(currentCommit !== 'local') ? 'at' : 'on'} <a className="tooltip tooltip-top tooltip-primary mt-[2px] text-base hover:text-blue-500 hover:underline" data-tip={currentCommitMsg} href={(currentCommit !== 'local') ? `https://github.com/gxjakkap/.me/commit/${currentCommit}` : 'https://youtu.be/BbeeuzU5Qc8'} target="_blank" rel="noreferrer">{truncateGitHash(currentCommit)}</a></p>
+                <p>Currently {(currentCommit !== 'local') ? 'at' : 'on'} <a className={`${currentCommitMsg ? "tooltip tooltip-top tooltip-primary" : ""} mt-[2px] hover:text-blue-500 hover:underline`} data-tip={currentCommitMsg} href={(currentCommit !== 'local') ? `https://github.com/gxjakkap/.me/commit/${currentCommit}` : 'https://youtu.be/BbeeuzU5Qc8'} target="_blank" rel="noreferrer">{truncateGitHash(currentCommit)}</a></p>
             </div> 
             <div>
                 <span className="footer-title">Links</span> 

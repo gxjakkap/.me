@@ -17,7 +17,7 @@ function SunIcon () {
     )
 }
 
-export default function DarkModeButton(){
+export default function DarkModeButton({ isMobile }){
     const [mounted, setMounted] = useState(false)
     const {theme, setTheme} = useTheme()
 
@@ -26,21 +26,29 @@ export default function DarkModeButton(){
     }, [])
 
     if (!mounted) {
-    return null
+        return null
     }
 
-    /* <select className="select w-full max-w-[6rem] select-ghost" value={theme} onChange={e => setTheme(e.target.value)}>
-            <option value="light"><SunIcon /> Light</option>
-            <option value="dark"><MoonIcon /> Dark</option>
-        </select> */
-    return (
-        
-        <div className="dropdown-end dropdown">
-            <label tabIndex={0} className="btn-ghost rounded-btn btn normal-case">{(theme === "light") ? (<><SunIcon /> Light</>) : (<><MoonIcon /> Dark</>)}</label>
-            <ul tabIndex={0} className="dropdown-content menu rounded-box mt-4 w-52 bg-base-100 p-2 shadow">
+    if (isMobile) {
+        return (
+            <>
                 <li><a onClick={() => {setTheme('light')}} className="text-neutral"><SunIcon /> Light</a></li> 
                 <li><a onClick={() => {setTheme('dark')}} className="text-neutral"><MoonIcon /> Dark</a></li>
-            </ul>
-        </div>
-    )
+            </>
+        )
+    }
+    else {
+        return (
+            <>
+                <div className="dropdown dropdown-bottom dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost m-1 normal-case">{(theme === "light") ? (<><SunIcon /> Light</>) : (<><MoonIcon /> Dark</>)}</label>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <li className="menu-title">Theme</li>
+                        <li><a onClick={() => {setTheme('light')}} className="text-neutral"><SunIcon /> Light</a></li> 
+                        <li><a onClick={() => {setTheme('dark')}} className="text-neutral"><MoonIcon /> Dark</a></li>
+                    </ul>
+                </div>
+            </>
+        )
+    }
 }

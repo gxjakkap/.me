@@ -18,8 +18,8 @@ dependencies:
     specifier: ^9.3.5
     version: 9.3.5
   daisyui:
-    specifier: ^4.0.7
-    version: 4.0.7(postcss@8.4.21)
+    specifier: ^4.6.0
+    version: 4.6.0(postcss@8.4.21)
   dotenv:
     specifier: ^16.0.3
     version: 16.0.3
@@ -943,17 +943,17 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  /culori@3.2.0:
-    resolution: {integrity: sha512-HIEbTSP7vs1mPq/2P9In6QyFE0Tkpevh0k9a+FkjhD+cwsYm9WRSbn4uMdW9O0yXlNYC3ppxL3gWWPOcvEl57w==}
+  /culori@3.3.0:
+    resolution: {integrity: sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: false
 
-  /daisyui@4.0.7(postcss@8.4.21):
-    resolution: {integrity: sha512-D84DnNDZKcamwNsxCMrwYaddyz5kC6VO6oe30nM1x67GzCAfarfd3Ar1rpLGXCIqSsEoNZUHO8EcXvX93W2ZkA==}
+  /daisyui@4.6.0(postcss@8.4.21):
+    resolution: {integrity: sha512-B5ZB/sczXpp4LMdo/SZrtYY/U2hq+Vr9I15QawuWZ0VwgtSAbuZpAZUftKVryEsPuv3BM0yVlBED0nAmtis/dw==}
     engines: {node: '>=16.9.0'}
     dependencies:
       css-selector-tokenizer: 0.8.0
-      culori: 3.2.0
+      culori: 3.3.0
       picocolors: 1.0.0
       postcss-js: 4.0.1(postcss@8.4.21)
     transitivePeerDependencies:

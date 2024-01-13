@@ -13,10 +13,13 @@ const NavList = ({isMobile}) => {
 
     const mobileNav = (
         <>
+            <li className="menu-title">Nav</li>
             <li><Link href="/">{Icons.home}Home</Link></li>
             <li><Link href="/projects">{Icons.projects}Projects</Link></li>
             <li><Link href="/blog">{Icons.blog}Blog</Link></li>
             <li><Link href="/links">{Icons.linktree}Links</Link></li>
+            <li className="menu-title">Theme</li>
+            <DarkModeButton isMobile={true} />
         </>
     )
 
@@ -40,9 +43,8 @@ export default function NavBar(){
                     <label tabIndex="0" className="btn-ghost btn lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex="0" className="dropdown-content menu rounded-box menu-normal mt-3 w-52 bg-base-100 p-2 text-gray-800 shadow dark:text-neutral">
+                    <ul tabIndex="0" className="dropdown-content menu menu-lg z-[1] rounded-box menu-normal mt-3 w-52 bg-base-100 p-2 text-gray-800 shadow dark:text-neutral">
                         <NavList isMobile={true} />
-                        <DarkModeButton />
                     </ul>
                 </div>
                 <button className="btn-ghost btn hidden text-xl normal-case lg:block"><Link href="/"><Image src="https://res.cloudinary.com/dynrld3nm/image/upload/v1657915322/guntxjakka.me/logo_c2x50a.png" width={44} height={44} alt="GuntxJakka's logo"/></Link></button>
@@ -54,7 +56,7 @@ export default function NavBar(){
                 <ul className="menu menu-horizontal p-0">
                     <NavList isMobile={false} />
                 </ul>
-                <DarkModeButton />
+                <DarkModeButton isMobile={false} />
             </div>
         </div>
     )
