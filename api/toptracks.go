@@ -115,7 +115,7 @@ type topTracksResponse struct {
 }
 
 type ttSong struct {
-	Artist    string `json:"atrist"`
+	Artist    string `json:"artist"`
 	Name      string `json:"name"`
 	Uri       string `json:"uri"`
 	Link      string `json:"link"`
