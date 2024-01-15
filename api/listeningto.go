@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
@@ -155,9 +154,9 @@ func getAccessToken(endpoint string, body io.Reader, basic string) getAccessToke
 
 	defer res.Body.Close()
 
-	resData, err := ioutil.ReadAll(res.Body)
+	resData, err := io.ReadAll(res.Body)
 	if err != nil {
-		return getAccessTokenResult{false, "", "ioutilReadAll Error"}
+		return getAccessTokenResult{false, "", "ioReadAll Error"}
 	}
 
 	var APIResponse getAccessTokenResponse
@@ -195,10 +194,10 @@ func getNowPlaying(endpoint string, bearer string) spotifyNowPlayingResponse {
 
 	defer res.Body.Close()
 
-	resData, err := ioutil.ReadAll(res.Body)
+	resData, err := io.ReadAll(res.Body)
 
 	if err != nil {
-		return spotifyNowPlayingResponse{418, spotifyNowPlayingData{}, "ioutilReadAll Error"}
+		return spotifyNowPlayingResponse{418, spotifyNowPlayingData{}, "ioReadAll Error"}
 	}
 
 	fmt.Println(res.StatusCode)
@@ -268,7 +267,7 @@ func spotifyQuery() (spotifyQueryResult, spotifyQueryError) {
 	return spotifyQueryResult{data.Item.Album.Name, data.Item.Album.Images[0].URL, artist, data.IsPlaying, data.Item.ExternalUrls.Spotify, data.Item.Name}, spotifyQueryError{}
 }
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func ListeningTo(w http.ResponseWriter, r *http.Request) {
 	res, err := spotifyQuery()
 
 	if err.Error != "" {
