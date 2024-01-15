@@ -80,7 +80,7 @@ export default function TopTracks(){
                 <meta property="og:site_name" content="GuntxJakka" />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content="Top Tracks - GuntxJakka" />
-                <meta name="twitter:description" content="Top Tracks - GuntxJakka" />
+                <meta name="twitter:description" content="GuntxJakka's top tracks on Spotify" />
                 <meta name="twitter:site" content="@GuntxJakka" />
                 <meta name="twitter:image" content="https://res.cloudinary.com/dynrld3nm/image/upload/v1657876472/guntxjakka.me/website_thumb.webp" />
             </Head>
