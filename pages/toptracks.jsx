@@ -9,7 +9,7 @@ const TopTracksGridElement = ({ tracks }) => {
         <div className="grid-container">
             {tracks.map((data, i) => (
                 <Link key={data.uri} href={data.link}>
-                    <div className="card w-96 bg-base-100 shadow-xl image-full">
+                    <div className="card z-0 w-96 bg-base-100 shadow-xl image-full">
                         <figure><img src={data.image_link} alt={`${data.album}'s album cover`} /></figure>
                         {/* <Image width={96} height={96} src={data.image_link} alt={`${data.album}'s album cover`} /> */}
                         <div className="card-body">
