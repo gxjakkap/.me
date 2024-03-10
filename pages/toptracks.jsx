@@ -2,7 +2,8 @@ import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import Head from "next/head"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import useSWR from "swr"
+import { guntxFetching } from "../lib/fetchHelper"
 
 const TopTracksGridElement = ({ tracks }) => {
     return (
@@ -40,30 +41,7 @@ const LoadingSpiner = () => {
 }
 
 export default function TopTracks(){
-    const [tracks, setTracks] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
-    const [isError, setIsError] = useState(false)
-
-    useEffect(() => {
-        let apiOrigin = "https://guntxjakka.me"
-        if (process.env.NODE_ENV == "development"){
-            apiOrigin = window.location.origin
-            console.log(window.location.origin)
-        }
-        fetch(`${apiOrigin}/api/toptracks`)
-            .then(res => {
-                res.json().then(ttd => {
-                    console.log(ttd)
-                    setTracks(ttd.items)
-                    setIsLoading(false)
-                })
-            })
-            .catch((err) => {
-                console.log(err)
-                setIsLoading(false)
-                setIsError(true)
-            })
-    }, [])
+    const { data: tracks, error: isError, isLoading } = useSWR('toptracks', guntxFetching)
 
     return (
         <main className="min-h-screen flex flex-col">
@@ -95,7 +73,7 @@ export default function TopTracks(){
                         <h3 className="text-xl tracking-tight text-neutral md:text-2xl mt-2">Period: Short Term (4w)</h3>
                     </div>
                     { isLoading ? (<LoadingSpiner />) : isError ? (<p>Error.</p>) : (
-                        <TopTracksGridElement tracks={tracks} />
+                        <TopTracksGridElement tracks={tracks.items} />
                     ) }
                 </div>
             </div>

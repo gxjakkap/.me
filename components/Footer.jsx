@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react'
+import useSWR from "swr"
+import { useState, useEffect } from "react"
+
+import { guntxFetching } from "../lib/fetchHelper"
 import SpotifyIcon from './svgs/spotifyicon'
-import {FBForFooter, YTForFooter, TwitterForFooter, TWTVForFooter, EmailForFooter, GitHubForFooter } from './svgs/footericons'
+import { FBForFooter, YTForFooter, TwitterForFooter, TWTVForFooter, EmailForFooter, GitHubForFooter } from './svgs/footericons'
 
 function getYear(){
     const today = new Date()
@@ -11,25 +14,10 @@ function truncateGitHash(hash) {
     return hash.substring(0, 7)
 }
 export default function Footer(){
-    const [nowPlaying, setNowPlayingData] = useState(null)
     const [currentCommit, setCurrentCommit] = useState("")
     const [currentCommitMsg, setCurrentCommitMsg] = useState("")
 
-    useEffect(() => {
-        if (nowPlaying) return
-        let apiOrigin = "https://guntxjakka.me"
-        if (process.env.NODE_ENV == "development"){
-            apiOrigin = window.location.origin
-            console.log(window.location.origin)
-        }
-        fetch(`${apiOrigin}/api/listeningto`)
-            .then(res => {
-                res.json().then(bd => {
-                    setNowPlayingData(bd)
-                    console.log(bd)
-                })
-            })
-    }, [nowPlaying])
+    const { data: nowPlaying } = useSWR('listeningto', guntxFetching)
 
     useEffect(() => {
         console.log(`ENV: ${process.env.NEXT_PUBLIC_VERCEL_ENV}`)
