@@ -175,7 +175,7 @@ func getAccessTokenForTT(endpoint string, body io.Reader, basic string) getAcces
 func getTopTracks(endpoint string, bearer string) topTracksResponse {
 
 	timeRange := "short_term"
-	limit := 5
+	limit := 6
 	offSet := 0
 
 	u, err := url.Parse(endpoint)
