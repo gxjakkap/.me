@@ -20,6 +20,7 @@
     "gray-matter": "^4.0.3",
     "next": "14.0.4",
     "next-themes": "^0.2.1",
+    "radium": "^0.26.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-loader-spinner": "^5.3.4",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
+    "@types/radium": "^0.24.8",
     "autoprefixer": "^10.4.7",
     "eslint": "8.19.0",
     "eslint-config-next": "14.0.4",
