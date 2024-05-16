@@ -13,6 +13,7 @@
     "@contentful/rich-text-plain-text-renderer": "^16.0.3",
     "@contentful/rich-text-types": "^16.0.3",
     "@madebyconnor/rich-text-to-jsx": "^2.2.1",
+    "@vercel/kv": "^1.0.1",
     "@vercel/speed-insights": "^1.0.3",
     "contentful": "^9.3.5",
     "daisyui": "^4.6.0",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
     "@types/radium": "^0.24.8",
+    "@vercel/node": "^3.1.5",
     "autoprefixer": "^10.4.7",
     "eslint": "8.19.0",
     "eslint-config-next": "14.0.4",
