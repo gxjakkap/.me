@@ -65,7 +65,7 @@ export default function Navbar({ pathName }: {pathName: string}){
             </header>
             <header className="md:flex fixed w-full bg-[#f2f2f2] pb-3 z-50 hidden pt-6">
                 <div className="flex ml-auto mr-[10%]">
-                    <ul className="flex gap-x-4 list-none font-inter text-base lg:text-[1.05rem]">
+                    <ul className="flex gap-x-5 list-none font-inter text-base lg:text-[1rem]">
                         <Links cur={cur} />
                     </ul>
                 </div>
