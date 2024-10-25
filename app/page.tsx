@@ -1,9 +1,9 @@
-'use client'
 import { ChevronDoubleDownIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import Link from "next/link"
 
 import stack from "@/data/techstack.json"
+import { Metadata } from "next"
 
 const calcAge = () => {
   'use client'
@@ -15,8 +15,29 @@ const calcAge = () => {
 
 type SkillCategory = 'front' | 'back' | 'tools'
 
+export const metadata: Metadata = {
+    title: "jakka",
+    description: "An aspiring Computer Engineering student.",
+    authors: { name: "Jakkaphat Chalermphanaphan", url: "https://guntxjakka.me" },
+    openGraph: {
+        title: "jakka",
+        description: "An aspiring Computer Engineering student.",
+        type: "website",
+        images: "https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto/guntxjakka.me/me_2024",
+        siteName: "jakka"
+    },
+    twitter: {
+        card: "summary",
+        title: "jakka",
+        description: "An aspiring Computer Engineering student.",
+        site: "@guntxjakka",
+        images: "https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto/guntxjakka.me/me_2024",
+
+    }
+}
+
 export default function Home() {
-  const dataMap: { name: SkillCategory; displayName: string }[] = [{name: 'front', displayName: 'Frontend'}, {name: 'back', displayName: 'Backend'}, {name: 'tools', displayName: 'Tools'}]
+  const dataMap: { name: SkillCategory; displayName: string }[] = [{name: 'front', displayName: 'Frontend'}, {name: 'back', displayName: 'Backend'}, {name: 'tools', displayName: 'Tools / Other languages'}]
   return (
     <main className="flex flex-col flex-grow mx-auto lg:ml-[25%] lg:mr-0 pt-4 lg:pt-10 lg:mt-14 w-3/4 lg:w-1/2">
       <h1 className="font-inter font-medium text-4xl lg:text-3xl lg:mt-4 text-center lg:text-left">Hi! I'm <span className="home-title-name">j</span><span className="home-title-name">a</span><span className="home-title-name">k</span><span className="home-title-name">k</span><span className="home-title-name">a</span><span className="home-title-hand">👋🏼</span></h1>
@@ -40,7 +61,7 @@ export default function Home() {
             </Link>
           </div>
       </section>
-      <section className="flex flex-col-reverse lg:flex-row-reverse gap-x-8 pb-52 scroll-mt-48" id="more">
+      <section className="flex flex-col-reverse lg:flex-row-reverse gap-x-8 pb-52 scroll-mt-14 lg:scroll-mt-48" id="more">
         <div className="flex flex-col gap-y-3">
           <h2 className="font-inter font-medium text-3xl mt-4 text-center lg:text-right">
             More about me🙋🏼‍♂️
@@ -51,7 +72,7 @@ export default function Home() {
         </div>
         <Image src="https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto/guntxjakka.me/me-2.jpg" width={"350"} height={350} alt="me" className="w-[250px] lg:w-[350px] lg:h-[350px] aspect-square lg:mt-[65px] mx-auto drop-shadow-lg" />
       </section>
-      <section className="flex flex-col gap-x-8 pb-52 gap-y-2 font-inter scroll-mt-48" id="education">
+      <section className="flex flex-col gap-x-8 pb-52 gap-y-2 font-inter scroll-mt-12 lg:scroll-mt-48" id="education">
           <h2 className="font-inter font-medium text-3xl mt-4 text-center lg:text-left">
             Educational Background🎓
           </h2>
@@ -79,7 +100,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-x-8 pb-28 font-inter scroll-mt-3" id="skills">
+      <section className="flex flex-col gap-x-8 pb-28 font-inter scroll-mt-12" id="skills">
           <h2 className="font-inter font-medium text-3xl mt-4 text-center lg:text-left">
             Skills⚙️
           </h2>
@@ -88,9 +109,9 @@ export default function Home() {
                   dataMap.map(cur => (
                       <div key={cur.name} className="flex flex-col gap-y-4 max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl">
                           <h3 className="text-2xl font-inter font-medium">{cur.displayName}</h3>
-                          <div className="flex flex-wrap gap-y-3 gap-x-4">
+                          <div className="flex flex-wrap gap-y-8 gap-x-5 mx-auto lg:mx-0">
                               {stack[cur.name]?.map((ea) => (
-                                  <div key={ea.name} className="w-20 h-20 flex flex-col gap-y-1 rounded-2xl">
+                                  <div key={ea.name} className="w-20 h-20 flex flex-col gap-y-2 lg:gap-y-1 rounded-2xl">
                                       <img className="w-14 h-14 mx-auto" src={ea.image} alt={ea.name} />
                                       <p className="font-inter text-center">{ea.name}</p>
                                   </div>

@@ -39,7 +39,10 @@ export default function SiteFooter() {
             <span className="mx-auto lg:ml-0 lg:mr-auto">jakka - 2024</span>
             {(npdata.title.length > 0) ? (
                 <div className="hover:underline font-inter">
-                    <a href={npdata.song_url} target="blank" rel="noopener,noreferrer">listening to {npdata.title} by {npdata.artist}</a>
+                    <a href={npdata.song_url} target="blank" rel="noopener,noreferrer" className="flex flex-col text-center lg:flex-row gap-x-[0.2rem]">
+                        <div>listening to</div> 
+                        <div>{npdata.title} by {npdata.artist}</div>
+                    </a>
                 </div>
             ) : (<></>)}
             <div className="flex mx-auto lg:ml-auto lg:mr-0 gap-x-3 font-inter underline">
