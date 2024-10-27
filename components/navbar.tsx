@@ -64,15 +64,19 @@ export default function Navbar(){
                         &nbsp;
                     </div>
                     <div className="fixed top-0 right-0 z-40 h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0">
-                        <div className="float-right min-h-full w-[85%] bg-white px-6 pt-12 shadow-2xl font-inter">
+                        <div className="float-right min-h-full w-[85%] bg-[#f2f2f2] dark:bg-[#1a1a1a] px-6 pt-12 shadow-2xl font-inter">
                             <XMarkIcon className="ml-auto size-8 text-[#313638] dark:text-[#e0e0e0]" />
-                            <div className="text-center font-bold text-lg">jakka  </div>
-                            <div className="font-medium">Pages</div>
+                            <div className="text-center font-bold text-lg">jakka</div>
+                            <div className="font-bold">Pages</div>
                             <menu>
                                 <Links cur={cur} menuRef={mobileMenuRef} />
                             </menu>
-                            <div className="font-medium mt-10">ETC</div>
+                            <div className="font-bold mt-10">ETC</div>
                             <Link className="text-[#313638] dark:text-[#e0e0e0]" href="/etc/heavyrotation" onClick={() => {(mobileMenuRef as any).current.checked = false}}>Heavy Rotation</Link>
+                            <div className="mt-32" onClick={themeToggle}>
+                                {(theme === 'light') && <MoonIcon className="w-8 text-[#313638]" />}
+                                {(theme === 'dark') && <SunIcon className="w-8 text-[#e0e0e0]" />}
+                            </div>
                         </div>
                     </div>
                 </label>
