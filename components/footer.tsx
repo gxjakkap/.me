@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react"
 
+import { guntxFetching } from "@/lib/fetchHelper"
+
 interface nowPlaying {
     "album": string,
     "album_image_url": string,
@@ -21,7 +23,8 @@ const blankNp: nowPlaying = {
 }
 
 const getNowPlaying = async() => {
-    return await (await fetch('https://guntxjakka.me/api/listeningto')).json()
+    //return await (await fetch('https://guntxjakka.me/api/listeningto')).json()
+    return await guntxFetching('listeningto')
 }
 
 export default function SiteFooter() {
@@ -35,7 +38,7 @@ export default function SiteFooter() {
     }, [])
 
     return (
-        <footer className="w-1/2 flex flex-col lg:flex-row mx-auto pb-5 text-[#a5a5a5]">
+        <footer className="w-1/2 flex flex-col lg:flex-row mx-auto pb-5 text-[#a5a5a5] dark:text-zinc-500">
             <span className="mx-auto lg:ml-0 lg:mr-auto">jakka - 2024</span>
             {(npdata.title.length > 0) ? (
                 <div className="hover:underline font-inter">

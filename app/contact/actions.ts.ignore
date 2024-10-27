@@ -29,9 +29,9 @@ export async function handleFormSubmit (formData: FormData){
     const postWebhookRes = await postWebhook.text()
     console.log(`sendwebhook: ${postWebhook.status} ${postWebhookRes}`)
     if (postWebhook.status === 200){
-        
+        return true
     }
     else {
-        
+        return false
     }
 }

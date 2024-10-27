@@ -15,10 +15,10 @@ export const BlogContentList = ({ data }: { data: AllBlogData[] }) => {
                 return (
                     <Link href={`/blog/${ea.slug}`} key={ea.slug}>
                         <div className="flex flex-col gap-y-[0.35rem] lg:gap-y-1 mt-4 cursor-pointer">
-                            <h3 className="text-xl lg:text-2xl text-[#313638] font-medium">{ea.title}</h3>
-                            <p className="text-sm lg:text-base text-[#525a5e]">{localeDateString(ea.date)} - {tagString}</p>
-                            <p className="text-sm lg:text-base text-[#525a5e]">{ea.metaDesc}</p>
-                            <hr className="text-[#525a5e] mt-1" />
+                            <h3 className="text-xl lg:text-2xl text-[#313638] dark:text-[#e0e0e0] font-medium">{ea.title}</h3>
+                            <p className="text-sm lg:text-base text-[#525a5e] dark:text-[#a0a8ab]">{localeDateString(ea.date)} - {tagString}</p>
+                            <p className="text-sm lg:text-base text-[#525a5e] dark:text-[#a0a8ab]">{ea.metaDesc}</p>
+                            <hr className="text-[#525a5e] dark:text-[#a0a8ab] mt-1" />
                         </div>
                     </Link>
                 )
