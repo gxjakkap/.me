@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: MetadataProps, parent: Resolv
             title: data.data?.title || "not found",
             description: data.data?.description || "",
             type: "website",
-            images: data.data?.thumbnail || "https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto/guntxjakka.me/me_2024",
+            images: data.data?.thumbnail || 'https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto,w_300/guntxjakka.me/me_2024.jpg',
             siteName: "jakka"
         },
         twitter: {
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: MetadataProps, parent: Resolv
             title: data.data?.title || "not found",
             description: data.data?.description || "",
             site: "@guntxjakka",
-            images: data.data?.thumbnail || "https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto/guntxjakka.me/me_2024",
+            images: data.data?.thumbnail || 'https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto,w_300/guntxjakka.me/me_2024.jpg',
     
         }
     }

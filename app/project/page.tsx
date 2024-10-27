@@ -5,27 +5,14 @@ import { FolderIcon } from "@heroicons/react/16/solid"
 import { getAllProjects } from "@/lib/contentful"
 import { ProjectListLoading } from "@/components/projects/home/loading"
 import { ProjectList } from "@/components/projects/home/projects-list"
+import { metadataTemplate } from "@/lib/meta"
 
-export const metadata: Metadata = {
-    title: "projects - jakka",
+
+export const metadata: Metadata = metadataTemplate({
+    title: "projects",
     description: "list of projects by jakka. might or might not be useful.",
-    authors: { name: "Jakkaphat Chalermphanaphan", url: "https://guntxjakka.me" },
-    openGraph: {
-        title: "projects - jakka",
-        description: "list of projects by jakka. might or might not be useful.",
-        type: "website",
-        images: "https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto/guntxjakka.me/me_2024",
-        siteName: "jakka"
-    },
-    twitter: {
-        card: "summary",
-        title: "projects - jakka",
-        description: "list of projects by jakka. might or might not be useful.",
-        site: "@guntxjakka",
-        images: "https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto/guntxjakka.me/me_2024",
-        
-    }
-}
+    addSiteNameInSocialTitle: true
+})
 
 const getData = cache(getAllProjects)
 
