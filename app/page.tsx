@@ -6,6 +6,7 @@ import stack from "@/data/techstack.json"
 import { Metadata } from "next"
 import { metadataTemplate } from "@/lib/meta"
 import style from "./home.module.css"
+import { StackImageWithDark } from "@/components/home/stack"
 
 const calcAge = () => {
   'use client'
@@ -101,8 +102,8 @@ export default function Home() {
                           <h3 className="text-2xl font-inter font-medium">{cur.displayName}</h3>
                           <div className="flex flex-wrap gap-y-8 gap-x-5 mx-auto lg:mx-0">
                               {stack[cur.name]?.map((ea) => (
-                                  <div key={ea.name} className="w-20 h-20 flex flex-col gap-y-2 lg:gap-y-1 rounded-2xl">
-                                      <img className="w-14 h-14 mx-auto" src={ea.image} alt={ea.name} />
+                                  <div key={ea.name} className="w-20 h-20 flex flex-col gap-y-2 lg:gap-y-1 rounded-2xl" suppressHydrationWarning>
+                                      <StackImageWithDark className="w-14 h-14 mx-auto" src={ea.image} srcDark={ea.image_dark || null} alt={ea.name} />
                                       <p className="font-inter text-center">{ea.name}</p>
                                   </div>
                               ))}
