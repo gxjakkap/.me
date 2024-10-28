@@ -43,8 +43,6 @@ export async function generateMetadata({ params }: MetadataProps, parent: Resolv
 export default async function BlogPage({ params }: Props){
     const slug = params.slug
     const data = await getData(slug)
-
-    console.log(data)
     
     if (data.error){
         if (data.errorCode === 404){
