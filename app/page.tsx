@@ -29,18 +29,18 @@ export default function Home() {
   return (
     <main className="flex flex-col flex-grow mx-auto lg:ml-[25%] lg:mr-0 pt-4 lg:pt-10 lg:mt-14 w-3/4 lg:w-1/2">
       <h1 className="font-inter font-medium text-4xl lg:text-3xl lg:mt-4 xl:mt-20 text-center lg:text-left">Hi! I'm <span className={style.hometitlename}>j</span><span className={style.hometitlename}>a</span><span className={style.hometitlename}>k</span><span className={style.hometitlename}>k</span><span className={style.hometitlename}>a</span><span className={style.hometitlehand}>👋🏼</span></h1>
-      <section className="flex flex-col pb-6 lg:pb-52 lg:gap-y-32 scroll-mt-14 lg:scroll-mt-48 xl:scroll-mt-56" id="main">
+      <section className="flex flex-col pb-6 lg:pb-52 lg:gap-y-32 scroll-mt-24 lg:scroll-mt-48 xl:scroll-mt-56" id="main">
           <div className="flex flex-col-reverse lg:flex-row gap-x-8">
             <div className="flex flex-col-reverse lg:flex-col my-8">
                 <p className="font-inter">
                     &emsp;A <span>{calcAge()}</span>-year-old Computer Engineering student at <a href="https://kmutt.ac.th" target="_blank" rel="noopener,noreferrer" className="text-blue-500 hover:underline ">KMUTT</a>. I enjoy playing video games, programming, and photography. Over the years, I've worked on various projects, mainly focused on both frontend and backend development. I'm quite familiar with Tailwind CSS and currently learning frameworks like React. Additionally, I love creating Discord bots and experimenting with random tech projects.
                 </p>
-                <div className="flex mx-auto my-2 gap-x-6">
+                <div className="flex mx-auto my-2 xl:mt-12 gap-x-6">
                     <button className="bg-[#3333331a] text-[#333333] hover:bg-[#33333333] dark:bg-[#e0e0e01a] dark:text-[#e0e0e0] dark:hover:bg-[#e0e0e033] border-0 rounded-lg cursor-pointer inline-block font-inter font-medium text-base leading-5 list-none m-0 px-3 py-3 text-center align-baseline whitespace-nowrap select-none touch-manipulation"><Link href={'/projects'}>What I did</Link></button>
                     <button className="bg-[#3333331a] text-[#333333] hover:bg-[#33333333] dark:bg-[#e0e0e01a] dark:text-[#e0e0e0] dark:hover:bg-[#e0e0e033]  border-0 rounded-lg cursor-pointer inline-block font-inter font-medium text-base leading-5 list-none m-0 px-3 py-3 text-center align-baseline whitespace-nowrap select-none touch-manipulation"><Link href={'/contact'}>Contact me</Link></button>
                 </div>
             </div>
-            <Image src="https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto/guntxjakka.me/me_2024" width={"350"} height={"350"} alt="me" className="w-[250px] lg:w-[350px] mt-[18px] mx-auto drop-shadow-lg" />
+            <Image src="https://res.cloudinary.com/dynrld3nm/image/upload/f_auto,q_auto/guntxjakka.me/me_2024" width={"350"} height={"350"} alt="me" className="w-[250px] h-[250px] md:w-[350px] md:h-[350px] lg:w-[350px] lg:h-[350px] mt-[18px] mx-auto drop-shadow-lg" />
           </div>
           <div className="flex flex-col mx-auto text-[#525a5e] text-sm text-center cursor-pointer">
             <Link href={"#more"}>

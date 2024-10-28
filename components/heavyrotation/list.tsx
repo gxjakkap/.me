@@ -27,6 +27,7 @@ export const HeavyRotationList = () => {
     }
 
     if (isLoading) return HeavyRotationLoading()
+    else if (isError) return (<p className="font-inter text-center lg:text-left">Error loading Jakka's heavy rotation. Please try again.</p>)
     else {
         return (
             <>
