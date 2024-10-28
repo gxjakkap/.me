@@ -35,7 +35,8 @@ export default function SiteFooter() {
             setNpdata(res)
             console.log(npdata)
         })
-    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <footer className="mx-auto flex w-1/2 flex-col pb-5 text-[#a5a5a5] dark:text-zinc-500 lg:flex-row">
