@@ -4,7 +4,7 @@ import { metadataTemplate } from "@/lib/meta"
 import { HeavyRotationList } from "@/components/heavyrotation/list"
 
 export const metadata: Metadata = metadataTemplate({
-    title: "heavy routation",
+    title: "heavy rotation",
     description: "jakka's heavy rotation.",
     addSiteNameInSocialTitle: true
 })
