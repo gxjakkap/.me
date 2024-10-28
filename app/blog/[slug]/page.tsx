@@ -1,6 +1,6 @@
 'use server'
 /// <reference path="@/lib/types/rttjsx.d.ts">
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { cache, Suspense } from 'react'
 
@@ -16,7 +16,7 @@ type MetadataProps = { params: Promise<{ slug: string }> }
 
 const getData = cache(getPostData)
 
-export async function generateMetadata({ params }: MetadataProps, parent: ResolvingMetadata): Promise<Metadata>{
+export async function generateMetadata({ params }: MetadataProps): Promise<Metadata>{
     const slug = (await params).slug
     const data = await getData(slug)
 
