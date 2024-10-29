@@ -19,7 +19,7 @@ export const ProjectContent = ({ data }: { data: ProjectData["data"] }) => {
                     alt={'thumbnail'}
                     width={450}
                     placeholder={<div className="mx-auto h-[150px] w-[250px] rounded-2xl bg-zinc-200 lg:mx-0 lg:h-[350px] lg:w-[450px]"></div>}
-                    className="mx-auto my-2 max-w-screen-sm lg:mx-0"
+                    className="mx-auto my-2 lg:mx-0"
                     src={data?.thumbnail || "https://cdn.statically.io/og/OOPS.jpg"}
                 />
 {/*                 <img width={450} className="max-w-screen my-2 mx-auto lg:mx-0" src={data?.thumbnail || "https://cdn.statically.io/og/OOPS.jpg"} alt="thumbnail" /> */}
