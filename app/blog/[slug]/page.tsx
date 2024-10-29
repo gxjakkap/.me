@@ -5,8 +5,8 @@ import { notFound } from 'next/navigation'
 import { cache, Suspense } from 'react'
 
 import { getPostData } from "@/lib/contentful"
-import { BlogContent } from '@/components/blog/content/content-layout'
-import { BlogLoading } from '@/components/blog/content/content-loading'
+import { BlogContent } from '@/components/blog/content/layout'
+import { BlogLoading } from '@/components/blog/content/loading'
 
 type Props = {
     params: Promise<{ slug: string }>
