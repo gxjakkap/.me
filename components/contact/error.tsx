@@ -18,6 +18,7 @@ export const ContactErrorModal = ({
         <div className="relative z-10 flex h-full flex-col p-6">
           <div className="mb-4 flex items-center justify-between">
             <button
+              type="button"
               onClick={() => setFormStatus("pending")}
               className="text-[#e0e0e0]"
               aria-label="Close modal"

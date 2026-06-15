@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/performance/noImgElement: <> */
 "use client"
 
 export default function NotFound() {

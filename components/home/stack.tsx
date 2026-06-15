@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/performance/noImgElement: <> */
 "use client"
 
 import { useTheme } from "next-themes"
@@ -42,7 +43,7 @@ export const Skills = ({ data: stack }: { data: StackData }) => {
       className="flex scroll-mt-12 flex-col gap-x-8 pb-28 font-inter xl:mt-48 xl:pb-48"
       id="skills"
     >
-      <h2 className="mt-4 text-center font-inter text-3xl font-medium lg:text-left">Skills⚙️</h2>
+      <h2 className="mt-4 text-center font-inter text-3xl font-medium lg:text-left">Skills ⚙️</h2>
       <div className="mt-10 flex flex-col gap-y-8">
         {dataMap.map((cur) => (
           <div

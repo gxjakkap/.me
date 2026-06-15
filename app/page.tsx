@@ -57,10 +57,16 @@ export default function Home() {
               projects.
             </p>
             <div className="mx-auto my-2 flex gap-x-6 xl:mt-12">
-              <button className="m-0 inline-block cursor-pointer touch-manipulation select-none list-none whitespace-nowrap rounded-lg border-0 bg-[#3333331a] p-3 text-center align-baseline font-inter text-base font-medium leading-5 text-[#333333] hover:bg-[#33333333] dark:bg-[#e0e0e01a] dark:text-[#e0e0e0] dark:hover:bg-[#e0e0e033]">
+              <button
+                type="button"
+                className="m-0 inline-block cursor-pointer touch-manipulation select-none list-none whitespace-nowrap rounded-lg border-0 bg-[#3333331a] p-3 text-center align-baseline font-inter text-base font-medium leading-5 text-[#333333] hover:bg-[#33333333] dark:bg-[#e0e0e01a] dark:text-[#e0e0e0] dark:hover:bg-[#e0e0e033]"
+              >
                 <Link href={"/projects"}>What I did</Link>
               </button>
-              <button className="m-0 inline-block cursor-pointer touch-manipulation select-none list-none  whitespace-nowrap rounded-lg border-0 bg-[#3333331a] p-3 text-center align-baseline font-inter text-base font-medium leading-5 text-[#333333] hover:bg-[#33333333] dark:bg-[#e0e0e01a] dark:text-[#e0e0e0] dark:hover:bg-[#e0e0e033]">
+              <button
+                type="button"
+                className="m-0 inline-block cursor-pointer touch-manipulation select-none list-none  whitespace-nowrap rounded-lg border-0 bg-[#3333331a] p-3 text-center align-baseline font-inter text-base font-medium leading-5 text-[#333333] hover:bg-[#33333333] dark:bg-[#e0e0e01a] dark:text-[#e0e0e0] dark:hover:bg-[#e0e0e033]"
+              >
                 <Link href={"/contact"}>Contact me</Link>
               </button>
             </div>

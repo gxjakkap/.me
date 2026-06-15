@@ -1,3 +1,6 @@
+/** biome-ignore-all lint/a11y/useKeyWithClickEvents: <> */
+/** biome-ignore-all lint/suspicious/noExplicitAny: <> */
+/** biome-ignore-all lint/a11y/noStaticElementInteractions: <> */
 "use client"
 
 import {
@@ -144,7 +147,6 @@ export default function Navbar() {
                 <Links cur={cur} menuRef={mobileMenuRef} />
               </menu>
               <div className="mt-10 font-bold">ETC</div>
-              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               <Link
                 className="text-[#313638] dark:text-[#e0e0e0]"
                 href="/etc/heavyrotation"

@@ -1,6 +1,6 @@
+import crypto from "node:crypto"
 import { kv } from "@vercel/kv"
 import type { VercelRequest, VercelResponse } from "@vercel/node"
-import crypto from "crypto"
 
 export default async function (request: VercelRequest, response: VercelResponse) {
   if (request.method !== "POST") {

@@ -25,6 +25,9 @@
       "complexity": {
         "noBannedTypes": "error",
         "noUselessTypeConstraint": "error"
+      },
+      "a11y": {
+        "noAmbiguousAnchorText": "off"
       }
     }
   },

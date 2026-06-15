@@ -23,7 +23,6 @@ const blankNp: nowPlaying = {
 }
 
 const getNowPlaying = async () => {
-  //return await (await fetch('https://guntxjakka.me/api/listeningto')).json()
   return await guntxFetching("listeningto")
 }
 
@@ -33,15 +32,13 @@ export default function SiteFooter() {
   useEffect(() => {
     getNowPlaying().then((res) => {
       setNpdata(res)
-      console.log(npdata)
     })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
     <footer className="mx-auto flex w-1/2 flex-col pb-5 text-[#a5a5a5] dark:text-zinc-500 lg:flex-row">
       <span className="mx-auto lg:ml-0 lg:mr-auto">jakka - 2024</span>
-      {npdata.title.length > 0 ? (
+      {npdata.title.length > 0 && (
         <div className="font-inter hover:underline">
           <a
             href={npdata.song_url}
@@ -55,8 +52,6 @@ export default function SiteFooter() {
             </div>
           </a>
         </div>
-      ) : (
-        <></>
       )}
       <div className="mx-auto flex gap-x-3 font-inter underline lg:ml-auto lg:mr-0">
         <a href="https://github.com/gxjakkap" target="_blank" rel="noopener noopener,noreferrer">
