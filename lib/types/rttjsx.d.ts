@@ -1,1 +1,1 @@
-declare module '@madebyconnor/rich-text-to-jsx'
+declare module "@madebyconnor/rich-text-to-jsx"

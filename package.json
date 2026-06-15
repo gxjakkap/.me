@@ -6,7 +6,10 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "format:check": "biome format ."
   },
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^16.0.3",
@@ -31,17 +34,13 @@
     "swr": "^2.2.5"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.0",
     "@types/node": "^20",
     "@types/radium": "^0.24.8",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/react-lazy-load-image-component": "^1.6.4",
-    "@typescript-eslint/eslint-plugin": "^8.11.0",
-    "@typescript-eslint/parser": "^8.11.0",
     "@vercel/node": "^3.1.5",
-    "eslint": "^8.19.0",
-    "eslint-config-next": "14.2.14",
-    "eslint-plugin-tailwindcss": "^3.17.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.3.3"

@@ -1,4 +1,4 @@
 {
-    "css.customData": [".vscode/tailwind.json"],
-    "prettier.endOfLine": "lf"
+  "css.customData": [".vscode/tailwind.json"],
+  "prettier.endOfLine": "lf"
 }
