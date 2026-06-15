@@ -28,6 +28,15 @@
       },
       "a11y": {
         "noAmbiguousAnchorText": "off"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "info",
+          "fix": "safe",
+          "options": {
+            "functions": ["clsx", "cva", "twMerge", "tw"]
+          }
+        }
       }
     }
   },
