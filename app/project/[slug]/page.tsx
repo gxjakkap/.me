@@ -1,4 +1,3 @@
-"use server"
 /// <reference path="@/lib/types/rttjsx.d.ts">
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
