@@ -1,0 +1,19 @@
+{
+	"name": "api",
+	"version": "1.0.50",
+	"scripts": {
+		"test": "vp test --passWithNoTests",
+		"dev": "bun run --watch src/index.ts"
+	},
+	"dependencies": {
+		"contentful": "^11.12.10",
+		"elysia": "latest"
+	},
+	"devDependencies": {
+		"bun-types": "latest",
+		"vite-plus": "catalog:"
+	},
+	"module": "src/index.js",
+	"private": true,
+	"type": "module"
+}

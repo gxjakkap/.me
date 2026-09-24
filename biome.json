@@ -1,80 +1,40 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.5.0/schema.json",
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "preset": "recommended",
-      "suspicious": {
-        "noExplicitAny": "error",
-        "noImplicitAnyLet": "error",
-        "noConfusingVoidType": "error",
-        "noAsyncPromiseExecutor": "error",
-        "noVar": "error"
-      },
-      "correctness": {
-        "noUnusedVariables": "error",
-        "noUnusedImports": "error"
-      },
-      "style": {
-        "noNonNullAssertion": "warn",
-        "useConst": "error",
-        "useTemplate": "error",
-        "useImportType": "error"
-      },
-      "complexity": {
-        "noBannedTypes": "error",
-        "noUselessTypeConstraint": "error"
-      },
-      "a11y": {
-        "noAmbiguousAnchorText": "off"
-      },
-      "nursery": {
-        "useSortedClasses": {
-          "level": "info",
-          "fix": "safe",
-          "options": {
-            "functions": ["clsx", "cva", "twMerge", "tw"]
-          }
-        }
-      }
-    }
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 100
-  },
-  "javascript": {
-    "formatter": {
-      "semicolons": "asNeeded",
-      "quoteStyle": "double",
-      "jsxQuoteStyle": "double",
-      "trailingCommas": "all",
-      "arrowParentheses": "always",
-      "bracketSpacing": true,
-      "bracketSameLine": false
-    }
-  },
-  "json": {
-    "formatter": {
-      "trailingCommas": "none"
-    }
-  },
-  "files": {
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!coverage"]
-  },
-  "overrides": [
-    {
-      "includes": ["**/*.css"],
-      "linter": {
-        "rules": {
-          "suspicious": {
-            "noUnknownAtRules": "off"
-          }
-        }
-      }
-    }
-  ]
+	"$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": true,
+		"includes": ["**", "!**/routeTree.gen.ts", "!**/*.svg"]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab"
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended"
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double"
+		}
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	}
 }
