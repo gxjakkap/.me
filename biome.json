@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
+	"$schema": "node_modules/@biomejs/biome/configuration_schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -21,7 +21,15 @@
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "double"
+			"quoteStyle": "double",
+			"semicolons": "asNeeded",
+			"trailingCommas": "es5",
+			"bracketSameLine": true,
+			"lineEnding": "lf",
+			"jsxQuoteStyle": "double",
+			"indentWidth": 2,
+			"trailingNewline": true,
+			"bracketSpacing": true
 		}
 	},
 	"assist": {
