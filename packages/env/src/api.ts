@@ -13,7 +13,11 @@ export const env = createEnv({
 		SPOTIFY_CLIENT_SECRET: z.string().min(1),
 		SPOTIFY_REFRESH_TOKEN: z.string().min(1),
 		WEB_BASE_URL: z.string().min(1),
-		CORS_ORIGIN: z.string().min(1),
+		// comma-separated; new URL() normalizes each (IDN -> punycode, as browsers send it in Origin)
+		CORS_ORIGIN: z
+			.string()
+			.min(1)
+			.transform((s) => s.split(",").map((o) => new URL(o.trim()).origin)),
 	},
 	runtimeEnv: process.env,
 	emptyStringAsUndefined: true,
