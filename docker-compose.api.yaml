@@ -1,0 +1,15 @@
+services:
+  api:
+    image: ghcr.io/gxjakkap/dotme-api:latest
+    pull_policy: always
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel run
+    env_file: .env
