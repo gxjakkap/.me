@@ -1,5 +1,6 @@
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer"
 import readingTime from "reading-time"
+import { assetUrl } from "../asset"
 import { client } from "../client"
 import type {
 	BlogPostSkeleton,
@@ -25,7 +26,7 @@ export async function getBlogPostListService({
 			slug: f.slug,
 			title: f.name,
 			metaDesc: f.description,
-			socialImage: f.imageLink,
+			socialImage: assetUrl(f.thumbnailAsset),
 			date: f.date,
 			tags: f.tags,
 		})),
@@ -40,12 +41,12 @@ export async function getBlogPostService(slug: string): Promise<GetBlogPostServi
 
 	if (res.items.length < 1) return null
 
-	const { name, description, imageLink, date, tags, content } = res.items[0].fields
+	const { name, description, thumbnailAsset, date, tags, content } = res.items[0].fields
 
 	const data = {
 		title: name,
 		metaDesc: description,
-		socialImage: imageLink,
+		socialImage: assetUrl(thumbnailAsset),
 		date: date,
 		tags: tags,
 	}

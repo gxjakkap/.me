@@ -5,7 +5,7 @@ export const BlogPostItem = t.Object({
 	slug: t.String(),
 	title: t.String(),
 	metaDesc: t.String(),
-	socialImage: t.String(),
+	socialImage: t.Nullable(t.String()),
 	date: t.String(),
 	tags: t.Array(t.String()),
 })

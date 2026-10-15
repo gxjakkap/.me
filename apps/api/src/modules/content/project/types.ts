@@ -1,6 +1,7 @@
 import type { EntryFieldTypes, EntrySkeletonType } from "contentful"
 import type { Static } from "elysia"
-import type { GetProjectListModel, GetProjectModel, ProjectItem as ProjectItemModel, ProjectStackItem } from "./models"
+import type { TechStackSkeleton } from "../stack/types"
+import type { GetProjectListModel, GetProjectModel, ProjectItem as ProjectItemModel } from "./models"
 
 export interface ProjectSkeleton extends EntrySkeletonType {
 	contentTypeId: "projects"
@@ -8,12 +9,12 @@ export interface ProjectSkeleton extends EntrySkeletonType {
 		title: EntryFieldTypes.Symbol
 		slug: EntryFieldTypes.Symbol
 		description: EntryFieldTypes.Text
-		thumbnail: EntryFieldTypes.Symbol
 		githubLink?: EntryFieldTypes.Symbol
 		projectLink?: EntryFieldTypes.Symbol
 		tags: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
 		content: EntryFieldTypes.RichText
-		stack?: EntryFieldTypes.Object<Static<typeof ProjectStackItem>[]>
+		techStack?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TechStackSkeleton>>
+		thumbnailAsset?: EntryFieldTypes.AssetLink
 	}
 }
 

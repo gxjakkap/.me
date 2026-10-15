@@ -1,7 +1,7 @@
 interface MetadataTemplateArguments {
 	title: string
 	description: string
-	thumbnail?: string
+	thumbnail?: string | null
 	addSiteNameInSocialTitle: boolean
 	isHome?: boolean
 }

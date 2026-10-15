@@ -5,7 +5,7 @@ export const ProjectItem = t.Object({
 	slug: t.String(),
 	title: t.String(),
 	description: t.String(),
-	thumbnail: t.String(),
+	thumbnail: t.Nullable(t.String()),
 	tags: t.Array(t.String()),
 	date: t.String(),
 })
@@ -34,7 +34,7 @@ export const GetProjectModel = {
 	response: t.Object({
 		title: t.String(),
 		description: t.String(),
-		thumbnail: t.String(),
+		thumbnail: t.Nullable(t.String()),
 		githubLink: t.Nullable(t.String()),
 		projectLink: t.Nullable(t.String()),
 		tags: t.Array(t.String()),
