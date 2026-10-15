@@ -8,10 +8,10 @@ export interface BlogPostSkeleton extends EntrySkeletonType {
 		name: EntryFieldTypes.Symbol
 		slug: EntryFieldTypes.Symbol
 		description: EntryFieldTypes.Text
-		imageLink: EntryFieldTypes.Symbol
 		date: EntryFieldTypes.Date
 		tags: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
 		content: EntryFieldTypes.RichText
+		thumbnailAsset?: EntryFieldTypes.AssetLink
 	}
 }
 

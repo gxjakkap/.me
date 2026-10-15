@@ -4,8 +4,7 @@ import { createFileRoute, Link } from "@tanstack/react-router"
 import style from "../assets/css/home.module.css"
 import { Education } from "../components/home/education"
 import { Skills } from "../components/home/stack"
-import stack from "../data/techstack.json"
-import { api } from "../lib/api"
+import { api, unwrap } from "../lib/api"
 import { PAGE_META } from "../lib/meta"
 
 const calcAge = () => {
@@ -30,6 +29,11 @@ function Home() {
 			}
 			return res.data.slug
 		},
+	})
+
+	const { data: stack } = useQuery({
+		queryKey: ["stack"],
+		queryFn: () => unwrap(api.content.stack.get()),
 	})
 
 	return (
@@ -120,7 +124,7 @@ function Home() {
 				/>
 			</section>
 			<Education />
-			<Skills data={stack} />
+			{stack && <Skills data={stack} />}
 		</main>
 	)
 }

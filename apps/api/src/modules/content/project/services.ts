@@ -1,4 +1,6 @@
+import { assetUrl } from "../asset"
 import { client } from "../client"
+import { toStackItems } from "../stack/services"
 import type {
 	GetProjectListServiceParams,
 	GetProjectListServiceResponse,
@@ -23,7 +25,7 @@ export async function getProjectListService({
 			slug: f.slug,
 			title: f.title,
 			description: f.description,
-			thumbnail: f.thumbnail,
+			thumbnail: assetUrl(f.thumbnailAsset),
 			tags: f.tags,
 			date: sys.createdAt,
 		})),
@@ -34,6 +36,7 @@ export async function getProjectService(slug: string): Promise<GetProjectService
 	const res = await client.getEntries<ProjectSkeleton>({
 		"fields.slug": slug,
 		content_type: "projects",
+		include: 2,
 	})
 
 	if (res.items.length < 1) return null
@@ -43,11 +46,11 @@ export async function getProjectService(slug: string): Promise<GetProjectService
 	return {
 		title: f.title,
 		description: f.description,
-		thumbnail: f.thumbnail,
+		thumbnail: assetUrl(f.thumbnailAsset),
 		githubLink: f.githubLink ?? null,
 		projectLink: f.projectLink ?? null,
 		tags: f.tags,
 		content: f.content,
-		stack: f.stack ?? null,
+		stack: f.techStack?.length ? toStackItems(f.techStack).map(({ name, image }) => ({ name, image })) : null,
 	}
 }
