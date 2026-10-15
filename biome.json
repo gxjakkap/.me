@@ -11,7 +11,8 @@
 	},
 	"formatter": {
 		"enabled": true,
-		"indentStyle": "tab"
+		"indentStyle": "tab",
+		"lineWidth": 120
 	},
 	"linter": {
 		"enabled": true,
@@ -27,7 +28,6 @@
 			"bracketSameLine": true,
 			"lineEnding": "lf",
 			"jsxQuoteStyle": "double",
-			"indentWidth": 2,
 			"trailingNewline": true,
 			"bracketSpacing": true
 		}

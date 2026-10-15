@@ -6,14 +6,21 @@
 		"dev": "bun run --watch src/index.ts"
 	},
 	"dependencies": {
+		"@contentful/rich-text-plain-text-renderer": "^17.2.1",
+		"@contentful/rich-text-types": "^17.2.7",
+		"@elysiajs/cors": "^1.4.2",
+		"@repo/env": "workspace:*",
 		"contentful": "^11.12.10",
-		"elysia": "latest"
+		"elysia": "latest",
+		"reading-time": "^1.5.0"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
 		"vite-plus": "catalog:"
 	},
-	"module": "src/index.js",
 	"private": true,
-	"type": "module"
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	}
 }

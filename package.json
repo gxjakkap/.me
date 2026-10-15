@@ -1,19 +1,6 @@
 {
 	"name": "@gxjakkap/me",
 	"version": "0.0.0",
-	"private": true,
-	"workspaces": [
-		"apps/*"
-	],
-	"type": "module",
-	"scripts": {
-		"prepare": "vp config --hooks --no-agent",
-		"dev": "vp run -r dev",
-		"build": "vp run -r build",
-		"test": "vp run -r test",
-		"lint": "biome check .",
-		"format": "biome check --write ."
-	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.14",
 		"@commitlint/cli": "^21.2.3",
@@ -21,8 +8,9 @@
 		"vite": "catalog:",
 		"vite-plus": "catalog:"
 	},
-	"overrides": {
-		"vite": "catalog:"
+	"catalog": {
+		"vite": "npm:@voidzero-dev/vite-plus-core@1.0.0-rc.0",
+		"vite-plus": "1.0.0-rc.0"
 	},
 	"devEngines": {
 		"packageManager": {
@@ -34,8 +22,21 @@
 	"engines": {
 		"node": ">=22.18.0"
 	},
-	"catalog": {
-		"vite": "npm:@voidzero-dev/vite-plus-core@1.0.0-rc.0",
-		"vite-plus": "1.0.0-rc.0"
-	}
+	"overrides": {
+		"vite": "catalog:"
+	},
+	"private": true,
+	"scripts": {
+		"prepare": "vp config --hooks --no-agent",
+		"dev": "vp run -r dev",
+		"build": "vp run -r build",
+		"test": "vp run -r test",
+		"lint": "biome check .",
+		"format": "biome check --write ."
+	},
+	"type": "module",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	]
 }
