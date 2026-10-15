@@ -4,10 +4,8 @@ import { getHeavyRotation, getListeningToModel } from "./model"
 import * as spotify from "./services"
 
 export const spotifyModules = new Elysia({ prefix: "/spotify" })
-	.headers({
-		"Access-Control-Allow-Origin": "*",
-		"Referrer-Policy": "no-referrer",
-	})
+	// CORS is handled by the cors() plugin in src/index.ts; an ACAO header here leaked to every route
+	.headers({ "Referrer-Policy": "no-referrer" })
 	.get(
 		"/heavyrotation",
 		async ({ status }) => {
