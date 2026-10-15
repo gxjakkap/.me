@@ -13,5 +13,11 @@
 	"vars": {
 		// set to the deployed API's URL
 		"API_BASE_URL": "https://api.gunt.in.th"
+	},
+	// `wrangler preview` (PR builds) needs its own vars; the Worker only reads public content, so prod is fine
+	"previews": {
+		"vars": {
+			"API_BASE_URL": "https://api.gunt.in.th"
+		}
 	}
 }
