@@ -1,0 +1,17 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "jakka-web",
+	"main": "worker/index.ts",
+	"compatibility_date": "2026-10-01",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"not_found_handling": "single-page-application",
+		// only page routes hit the worker; JS/CSS/images are served straight from assets
+		"run_worker_first": ["/", "/blog", "/blog/*", "/project", "/project/*", "/etc/heavyrotation"]
+	},
+	"vars": {
+		// set to the deployed API's URL
+		"API_BASE_URL": "http://localhost:3000"
+	}
+}

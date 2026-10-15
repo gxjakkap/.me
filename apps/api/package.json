@@ -1,0 +1,26 @@
+{
+	"name": "api",
+	"version": "1.0.50",
+	"scripts": {
+		"test": "vp test --passWithNoTests",
+		"dev": "bun run --watch src/index.ts"
+	},
+	"dependencies": {
+		"@contentful/rich-text-plain-text-renderer": "^17.2.1",
+		"@contentful/rich-text-types": "^17.2.7",
+		"@elysiajs/cors": "^1.4.2",
+		"@repo/env": "workspace:*",
+		"contentful": "^11.12.10",
+		"elysia": "latest",
+		"reading-time": "^1.5.0"
+	},
+	"devDependencies": {
+		"bun-types": "latest",
+		"vite-plus": "catalog:"
+	},
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	}
+}

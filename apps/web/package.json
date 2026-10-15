@@ -1,0 +1,41 @@
+{
+	"name": "web",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vp dev",
+		"build": "tsc -b && vp build",
+		"preview": "vp preview",
+		"preview:worker": "vp build && wrangler dev",
+		"deploy": "vp build && wrangler deploy",
+		"cf-typegen": "wrangler types",
+		"test": "vp test --passWithNoTests"
+	},
+	"dependencies": {
+		"@contentful/rich-text-react-renderer": "^16.2.2",
+		"@contentful/rich-text-types": "^17.2.7",
+		"@elysiajs/eden": "^1.4.9",
+		"@phosphor-icons/react": "^2.1.10",
+		"@repo/env": "workspace:*",
+		"@tanstack/react-query": "^5.104.2",
+		"@tanstack/react-router": "^1.170.39",
+		"api": "workspace:*",
+		"next-themes": "^0.4.6",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.3.3",
+		"@tanstack/router-plugin": "^1.168.40",
+		"@types/node": "^24.13.3",
+		"@types/react": "^19.2.18",
+		"@types/react-dom": "^19.2.7",
+		"@vitejs/plugin-react": "^6.1.1",
+		"tailwindcss": "^4.3.3",
+		"typescript": "~6.0.2",
+		"vite": "catalog:",
+		"vite-plus": "catalog:",
+		"wrangler": "^4.151.0"
+	}
+}

@@ -1,47 +1,42 @@
 {
-  "name": "@gxjakkap/me",
-  "version": "2.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
-    "start": "next start",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "format": "biome format --write .",
-    "format:check": "biome format ."
-  },
-  "dependencies": {
-    "@contentful/rich-text-plain-text-renderer": "^16.0.3",
-    "@contentful/rich-text-types": "^16.0.3",
-    "@heroicons/react": "^2.1.5",
-    "@madebyconnor/rich-text-to-jsx": "^2.2.1",
-    "@marsidev/react-turnstile": "^1.0.2",
-    "@types/nodemailer": "^6.4.16",
-    "@vercel/speed-insights": "^1.0.3",
-    "contentful": "^9.3.5",
-    "dotenv": "^16.0.3",
-    "next": "16.2.9",
-    "next-themes": "^0.3.0",
-    "nodemailer": "^6.9.16",
-    "radium": "^0.26.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-lazy-load-image-component": "^1.6.2",
-    "react-loader-spinner": "^5.3.4",
-    "reading-time": "^1.5.0",
-    "swr": "^2.2.5"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.5.0",
-    "@types/node": "^20",
-    "@types/radium": "^0.24.8",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@types/react-lazy-load-image-component": "^1.6.4",
-    "@vercel/node": "^3.1.5",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.13",
-    "typescript": "^5.3.3"
-  }
+	"name": "@gxjakkap/me",
+	"version": "0.0.0",
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.14",
+		"@commitlint/cli": "^21.2.3",
+		"@commitlint/config-conventional": "^21.2.3",
+		"vite": "catalog:",
+		"vite-plus": "catalog:"
+	},
+	"catalog": {
+		"vite": "npm:@voidzero-dev/vite-plus-core@1.0.0-rc.0",
+		"vite-plus": "1.0.0-rc.0"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "bun",
+			"version": "1.4.2",
+			"onFail": "download"
+		}
+	},
+	"engines": {
+		"node": ">=22.18.0"
+	},
+	"overrides": {
+		"vite": "catalog:"
+	},
+	"private": true,
+	"scripts": {
+		"prepare": "vp config --hooks --no-agent",
+		"dev": "vp run -r dev",
+		"build": "vp run -r build",
+		"test": "vp run -r test",
+		"lint": "biome check .",
+		"format": "biome check --write ."
+	},
+	"type": "module",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	]
 }
