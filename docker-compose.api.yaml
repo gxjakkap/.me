@@ -3,6 +3,8 @@ services:
     image: ghcr.io/gxjakkap/dotme-api:latest
     pull_policy: always
     restart: unless-stopped
+    labels:
+      com.centurylinklabs.watchtower.enable: "true"
     env_file: .env
     environment:
       NODE_ENV: production
