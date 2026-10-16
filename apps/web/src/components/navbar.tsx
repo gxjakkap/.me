@@ -10,7 +10,8 @@ const LINKS: { cur: CurState; label: string; to: LinkProps["to"]; hash?: string 
 	{ cur: "more", label: "About", to: "/", hash: "more" },
 	{ cur: "proj", label: "Projects", to: "/project" },
 	{ cur: "blog", label: "Blog", to: "/blog" },
-	/* { cur: "contact", label: "Contact", to: "/contact" }, */
+	{ cur: "contact", label: "Contact", to: "/contact" },
+	{ cur: null, label: "CV", to: "/cv" },
 ]
 
 function getCur(pathname: string, hash: string): CurState {

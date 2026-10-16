@@ -1,7 +1,3 @@
-// @ts-nocheck
-/** biome-ignore-all lint/correctness/noUnusedVariables: <> */
-/** biome-ignore-all lint/correctness/noUnusedImports: <> */
-
 import { DiscordLogoIcon, EnvelopeIcon, type Icon, InstagramLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react"
 import { createFileRoute } from "@tanstack/react-router"
 import { metadataTemplate } from "../lib/meta"
@@ -13,7 +9,7 @@ const CONTACTS: { label: string; href: string; icon: Icon }[] = [
 	{ label: "gunt@guntxjakka.me", href: "mailto:gunt@guntxjakka.me", icon: EnvelopeIcon },
 ]
 
-/* export const Route = createFileRoute("/contact")({
+export const Route = createFileRoute("/contact")({
 	head: () => ({
 		meta: metadataTemplate({
 			title: "contact",
@@ -22,7 +18,7 @@ const CONTACTS: { label: string; href: string; icon: Icon }[] = [
 		}),
 	}),
 	component: ContactPage,
-}) */
+})
 
 function ContactPage() {
 	return (

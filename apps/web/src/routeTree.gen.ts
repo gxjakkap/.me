@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CvRouteImport } from './routes/cv'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as EtcHeavyrotationRouteImport } from './routes/etc/heavyrotation'
@@ -19,6 +21,16 @@ import { Route as ProjectSlugRouteImport } from './routes/project/$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CvRoute = CvRouteImport.update({
+  id: '/cv',
+  path: '/cv',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -49,6 +61,8 @@ const ProjectSlugRoute = ProjectSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/cv': typeof CvRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etc/heavyrotation': typeof EtcHeavyrotationRoute
   '/project/$slug': typeof ProjectSlugRoute
@@ -57,6 +71,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/cv': typeof CvRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etc/heavyrotation': typeof EtcHeavyrotationRoute
   '/project/$slug': typeof ProjectSlugRoute
@@ -66,6 +82,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/cv': typeof CvRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/etc/heavyrotation': typeof EtcHeavyrotationRoute
   '/project/$slug': typeof ProjectSlugRoute
@@ -76,6 +94,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contact'
+    | '/cv'
     | '/blog/$slug'
     | '/etc/heavyrotation'
     | '/project/$slug'
@@ -84,6 +104,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contact'
+    | '/cv'
     | '/blog/$slug'
     | '/etc/heavyrotation'
     | '/project/$slug'
@@ -92,6 +114,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/contact'
+    | '/cv'
     | '/blog/$slug'
     | '/etc/heavyrotation'
     | '/project/$slug'
@@ -101,6 +125,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  CvRoute: typeof CvRoute
   BlogSlugRoute: typeof BlogSlugRoute
   EtcHeavyrotationRoute: typeof EtcHeavyrotationRoute
   ProjectSlugRoute: typeof ProjectSlugRoute
@@ -115,6 +141,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cv': {
+      id: '/cv'
+      path: '/cv'
+      fullPath: '/cv'
+      preLoaderRoute: typeof CvRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -157,6 +197,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  CvRoute: CvRoute,
   BlogSlugRoute: BlogSlugRoute,
   EtcHeavyrotationRoute: EtcHeavyrotationRoute,
   ProjectSlugRoute: ProjectSlugRoute,
